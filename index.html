@@ -1,63 +1,259 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Page</title>
+    <title>Dashboard: Análisis de Mindustry</title>
     <style>
+        :root {
+            --primary: #2b3a4a;
+            --secondary: #e74c3c;
+            --bg: #f4f7f6;
+            --text: #333;
+            --card-bg: #fff;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
             margin: 0;
-            background-color: #f4f7f6;
-        }
-
-        .card {
-            background-color: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 400px;
-        }
-
-        h1 {
-            color: #2c3e50;
-            margin-top: 0;
-        }
-
-        p {
-            color: #7f8c8d;
+            padding: 0;
             line-height: 1.6;
         }
 
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #27ae60;
+        header {
+            background-color: var(--primary);
             color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: background-color 0.3s;
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary);
         }
 
-        .btn:hover {
-            background-color: #219653;
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Grid for Roles */
+        .roles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .role-card {
+            background: var(--card-bg);
+            border-left: 4px solid var(--primary);
+            padding: 1rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .role-card h3 {
+            margin-top: 0;
+            color: var(--secondary);
+        }
+
+        /* Table for Timeline */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .status-pending {
+            color: #e67e22;
+            font-weight: bold;
+        }
+
+        .status-progress {
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .status-done {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        /* Tree structure */
+        .tree-container {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
         }
     </style>
 </head>
 
 <body>
-    <div class="card">
-        <h1>Hello, World! 🚀</h1>
-        <p>Welcome to my brand new GitHub Page. If you are reading this, the deployment was a complete success!</p>
-        <a href="https://github.com" class="btn">Back to GitHub</a>
+
+    <header>
+        <h1>Panel de Análisis: Mindustry</h1>
+        <p>Curso de Ingeniería y Procesos de Software</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Sección: Roles del Equipo -->
+        <section>
+            <h2>1. Roles del Equipo (6 Integrantes)</h2>
+            <div class="roles-grid">
+                <div class="role-card">
+                    <h3>Project Manager (Scrum Master)</h3>
+                    <p><strong>Asignado a:</strong> [Nombre 1]</p>
+                    <p>Coordina reuniones, verifica el cumplimiento del cronograma y mantiene la comunicación fluida del
+                        equipo.</p>
+                </div>
+                <div class="role-card">
+                    <h3>Analista de Arquitectura</h3>
+                    <p><strong>Asignado a:</strong> [Nombre 2]</p>
+                    <p>Analiza patrones de diseño, estructura de módulos y diagramas de componentes (ej. dependencia de
+                        Arc engine).</p>
+                </div>
+                <div class="role-card">
+                    <h3>Especialista en CI/CD y DevOps</h3>
+                    <p><strong>Asignado a:</strong> [Nombre 3]</p>
+                    <p>Revisa GitHub Actions, flujos de despliegue, manejo de dependencias (Gradle) y automatización.
+                    </p>
+                </div>
+                <div class="role-card">
+                    <h3>Analista de Calidad (QA) y Testing</h3>
+                    <p><strong>Asignado a:</strong> [Nombre 4]</p>
+                    <p>Investiga la cobertura de pruebas, issues reportados, políticas de pull requests y métricas de
+                        deuda técnica.</p>
+                </div>
+                <div class="role-card">
+                    <h3>Investigador de Metodologías</h3>
+                    <p><strong>Asignado a:</strong> [Nombre 5]</p>
+                    <p>Examina cómo la comunidad colabora (GitFlow, trunk-based), revisiones de código y el ciclo de
+                        vida de los issues.</p>
+                </div>
+                <div class="role-card">
+                    <h3>Líder de Documentación</h3>
+                    <p><strong>Asignado a:</strong> [Nombre 6]</p>
+                    <p>Consolida los hallazgos, redacta el informe final y prepara la presentación académica y los
+                        recursos visuales.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Cronograma de Trabajo -->
+        <section>
+            <h2>2. Cronograma de Trabajo</h2>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fase</th>
+                            <th>Tarea</th>
+                            <th>Responsable(s)</th>
+                            <th>Semana / Fecha</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fase 1: Preparación</td>
+                            <td>Clonar repositorio, ejecutar herramientas (Gitingest, Cloc) y setup de dashboard.</td>
+                            <td>[Nombre 1, Nombre 6]</td>
+                            <td>Semana 1</td>
+                            <td class="status-done">Completado</td>
+                        </tr>
+                        <tr>
+                            <td>Fase 2: Extracción</td>
+                            <td>Análisis de commits, branches, issues y PRs. Revisión de Gradle y workflows de GitHub.
+                            </td>
+                            <td>[Nombre 3, Nombre 5]</td>
+                            <td>Semana 2</td>
+                            <td class="status-progress">En Progreso</td>
+                        </tr>
+                        <tr>
+                            <td>Fase 3: Análisis Técnico</td>
+                            <td>Mapeo de arquitectura, ingeniería inversa, análisis de calidad y pruebas.</td>
+                            <td>[Nombre 2, Nombre 4]</td>
+                            <td>Semana 3</td>
+                            <td class="status-pending">Pendiente</td>
+                        </tr>
+                        <tr>
+                            <td>Fase 4: Consolidación</td>
+                            <td>Redacción del informe final, diagramación (Mermaid/UML) y preparación de la exposición.
+                            </td>
+                            <td>Todo el equipo</td>
+                            <td>Semana 4</td>
+                            <td class="status-pending">Pendiente</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Sección: Árbol del Proyecto -->
+        <section>
+            <h2>3. Árbol del Proyecto (Mindustry Core Structure)</h2>
+            <div class="tree-container">
+                <pre>
+Mindustry/
+├── .github/              # Flujos de trabajo de CI/CD (GitHub Actions)
+├── annotations/          # Procesadores de anotaciones Java personalizadas
+├── core/                 # ✨ Lógica principal del juego y entidades
+│   ├── src/mindustry/
+│   │   ├── ai/           # Inteligencia Artificial de las unidades
+│   │   ├── core/         # Manejo de estado del juego, UI principal
+│   │   ├── entities/     # Definición de unidades, balas, efectos
+│   │   ├── gen/          # Código autogenerado
+│   │   ├── maps/         # Generación y manejo de mapas
+│   │   ├── net/          # Lógica de multijugador (redes)
+│   │   └── world/        # Bloques, ambiente, físicas
+├── desktop/              # Launcher y configuraciones para PC (Windows, Mac, Linux)
+├── android/              # Configuraciones y empaquetado para Android
+├── ios/                  # Configuraciones para iOS (RoboVM)
+├── server/               # Servidor dedicado sin cabeza (Headless)
+├── tools/                # Scripts y herramientas de desarrollo/construcción
+├── build.gradle          # Configuración principal de dependencias (Gradle)
+└── README.md             # Documentación principal del repositorio
+</pre>
+            </div>
+            <p><em>* Este árbol es una abstracción. El framework base utilizado para el renderizado y utilidades es
+                    <strong>Arc</strong>, a menudo incluido como submódulo o dependencia.</em></p>
+        </section>
+
     </div>
 </body>
 
