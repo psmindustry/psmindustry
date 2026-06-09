@@ -1016,67 +1016,95 @@
                     </div>
 
                     <div class="flex overflow-x-auto gap-4 h-[550px] pb-4 snap-x hide-scrollbar">
-                        
+
                         <!-- Backlog -->
-                        <div class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm min-w-[280px] w-[280px] flex-shrink-0 snap-start">
-                            <div class="border-b border-outline-variant p-3 flex items-center justify-between bg-surface-container-low">
+                        <div
+                            class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm min-w-[280px] w-[280px] flex-shrink-0 snap-start">
+                            <div
+                                class="border-b border-outline-variant p-3 flex items-center justify-between bg-surface-container-low">
                                 <div class="flex items-center gap-2 text-on-surface">
-                                    <span class="material-symbols-outlined text-outline text-[18px]">radio_button_unchecked</span>
+                                    <span
+                                        class="material-symbols-outlined text-outline text-[18px]">radio_button_unchecked</span>
                                     <h3 class="font-bold text-[14px]">Backlog</h3>
                                 </div>
-                                <span id="count-backlog" class="bg-surface-variant text-on-surface-variant text-[11px] px-2 py-0.5 rounded-full font-bold">0</span>
+                                <span id="count-backlog"
+                                    class="bg-surface-variant text-on-surface-variant text-[11px] px-2 py-0.5 rounded-full font-bold">0</span>
                             </div>
-                            <div id="kanban-backlog" class="p-3 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50">
-                                <div class="animate-pulse flex space-x-2 items-center text-outline-variant text-sm justify-center py-4"><span class="material-symbols-outlined text-[16px] animate-spin">sync</span></div>
+                            <div id="kanban-backlog"
+                                class="p-3 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50">
+                                <div
+                                    class="animate-pulse flex space-x-2 items-center text-outline-variant text-sm justify-center py-4">
+                                    <span class="material-symbols-outlined text-[16px] animate-spin">sync</span>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Sprint Actual -->
-                        <div class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm min-w-[280px] w-[280px] flex-shrink-0 snap-start">
-                            <div class="border-b border-outline-variant p-3 flex items-center justify-between bg-surface-container-low">
+                        <div
+                            class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm min-w-[280px] w-[280px] flex-shrink-0 snap-start">
+                            <div
+                                class="border-b border-outline-variant p-3 flex items-center justify-between bg-surface-container-low">
                                 <div class="flex items-center gap-2 text-primary">
                                     <span class="material-symbols-outlined text-[18px]">directions_run</span>
                                     <h3 class="font-bold text-[14px]">Sprint Actual</h3>
                                 </div>
-                                <span id="count-sprint" class="bg-primary/10 text-primary text-[11px] px-2 py-0.5 rounded-full font-bold">0</span>
+                                <span id="count-sprint"
+                                    class="bg-primary/10 text-primary text-[11px] px-2 py-0.5 rounded-full font-bold">0</span>
                             </div>
-                            <div id="kanban-sprint" class="p-3 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50"></div>
+                            <div id="kanban-sprint"
+                                class="p-3 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50">
+                            </div>
                         </div>
 
                         <!-- In Progress -->
-                        <div class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm min-w-[280px] w-[280px] flex-shrink-0 snap-start">
-                            <div class="border-b border-outline-variant p-3 flex items-center justify-between bg-surface-container-low">
+                        <div
+                            class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm min-w-[280px] w-[280px] flex-shrink-0 snap-start">
+                            <div
+                                class="border-b border-outline-variant p-3 flex items-center justify-between bg-surface-container-low">
                                 <div class="flex items-center gap-2 text-secondary">
                                     <span class="material-symbols-outlined text-[18px]">clock_loader_40</span>
                                     <h3 class="font-bold text-[14px]">In Progress</h3>
                                 </div>
-                                <span id="count-inprogress" class="bg-secondary/10 text-secondary text-[11px] px-2 py-0.5 rounded-full font-bold">0</span>
+                                <span id="count-inprogress"
+                                    class="bg-secondary/10 text-secondary text-[11px] px-2 py-0.5 rounded-full font-bold">0</span>
                             </div>
-                            <div id="kanban-inprogress" class="p-3 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50"></div>
+                            <div id="kanban-inprogress"
+                                class="p-3 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50">
+                            </div>
                         </div>
 
                         <!-- In Review -->
-                        <div class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm min-w-[280px] w-[280px] flex-shrink-0 snap-start">
-                            <div class="border-b border-outline-variant p-3 flex items-center justify-between bg-surface-container-low">
+                        <div
+                            class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm min-w-[280px] w-[280px] flex-shrink-0 snap-start">
+                            <div
+                                class="border-b border-outline-variant p-3 flex items-center justify-between bg-surface-container-low">
                                 <div class="flex items-center gap-2 text-[#bb9af7]">
                                     <span class="material-symbols-outlined text-[18px]">rate_review</span>
                                     <h3 class="font-bold text-[14px] text-on-surface">In Review</h3>
                                 </div>
-                                <span id="count-review" class="bg-[#bb9af7]/10 text-[#bb9af7] text-[11px] px-2 py-0.5 rounded-full font-bold">0</span>
+                                <span id="count-review"
+                                    class="bg-[#bb9af7]/10 text-[#bb9af7] text-[11px] px-2 py-0.5 rounded-full font-bold">0</span>
                             </div>
-                            <div id="kanban-review" class="p-3 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50"></div>
+                            <div id="kanban-review"
+                                class="p-3 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50">
+                            </div>
                         </div>
 
                         <!-- Done -->
-                        <div class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm min-w-[280px] w-[280px] flex-shrink-0 snap-start">
-                            <div class="border-b border-outline-variant p-3 flex items-center justify-between bg-surface-container-low">
+                        <div
+                            class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm min-w-[280px] w-[280px] flex-shrink-0 snap-start">
+                            <div
+                                class="border-b border-outline-variant p-3 flex items-center justify-between bg-surface-container-low">
                                 <div class="flex items-center gap-2 text-[#9ece6a]">
                                     <span class="material-symbols-outlined text-[18px]">check_circle</span>
                                     <h3 class="font-bold text-[14px] text-on-surface">Done</h3>
                                 </div>
-                                <span id="count-done" class="bg-[#9ece6a]/10 text-[#9ece6a] text-[11px] px-2 py-0.5 rounded-full font-bold">0</span>
+                                <span id="count-done"
+                                    class="bg-[#9ece6a]/10 text-[#9ece6a] text-[11px] px-2 py-0.5 rounded-full font-bold">0</span>
                             </div>
-                            <div id="kanban-done" class="p-3 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50"></div>
+                            <div id="kanban-done"
+                                class="p-3 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1086,23 +1114,30 @@
             <section class="slide-container bg-surface-container-low/30">
                 <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
                     <div class="border-b border-outline-variant pb-xs flex items-center gap-sm">
-                        <div class="w-10 h-10 rounded-full bg-[#f7768e] text-white flex items-center justify-center font-bold shadow-md">
+                        <div
+                            class="w-10 h-10 rounded-full bg-[#f7768e] text-white flex items-center justify-center font-bold shadow-md">
                             P1</div>
                         <div>
-                            <h2 class="font-headline-lg text-headline-lg text-primary">Core + Rendering (Jack Llaique)</h2>
-                            <p class="font-body-sm text-body-sm text-on-surface-variant">Análisis del módulo Core y Rendering.</p>
+                            <h2 class="font-headline-lg text-headline-lg text-primary">Core + Rendering (Jack Llaique)
+                            </h2>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Análisis del módulo Core y
+                                Rendering.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
                         <!-- Text Col: Reduced size -->
                         <div class="lg:col-span-4 flex flex-col gap-md">
                             <div class="bg-white border border-outline-variant rounded-2xl p-lg shadow-sm">
-                                <h3 class="font-headline-md text-headline-md text-on-surface mb-sm flex items-center gap-xs">
-                                    <span class="material-symbols-outlined text-[#f7768e] text-[20px]">architecture</span>
+                                <h3
+                                    class="font-headline-md text-headline-md text-on-surface mb-sm flex items-center gap-xs">
+                                    <span
+                                        class="material-symbols-outlined text-[#f7768e] text-[20px]">architecture</span>
                                     Tareas Asignadas
                                 </h3>
                                 <div class="space-y-sm text-body-sm text-on-surface-variant leading-relaxed">
-                                    <p>Análisis del árbol Git de los módulos core, graphics y arc-core. Captura de estructura, git log, y redacción de análisis de decisiones técnicas. Ejecución de Mindustry V8 con capturas de menú y gameplay.</p>
+                                    <p>Análisis del árbol Git de los módulos core, graphics y arc-core. Captura de
+                                        estructura, git log, y redacción de análisis de decisiones técnicas. Ejecución
+                                        de Mindustry V8 con capturas de menú y gameplay.</p>
                                 </div>
                             </div>
                         </div>
@@ -1145,23 +1180,29 @@
             <section class="slide-container bg-surface-container-lowest">
                 <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
                     <div class="border-b border-outline-variant pb-xs flex items-center gap-sm">
-                        <div class="w-10 h-10 rounded-full bg-[#ff9e64] text-white flex items-center justify-center font-bold shadow-md">
+                        <div
+                            class="w-10 h-10 rounded-full bg-[#ff9e64] text-white flex items-center justify-center font-bold shadow-md">
                             P2</div>
                         <div>
                             <h2 class="font-headline-lg text-headline-lg text-primary">Gameplay + IA (Tania Ayque)</h2>
-                            <p class="font-body-sm text-body-sm text-on-surface-variant">Análisis de la IA y lógica de juego.</p>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Análisis de la IA y lógica de
+                                juego.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
                         <!-- Text Col -->
                         <div class="lg:col-span-4 flex flex-col gap-md">
-                            <div class="bg-surface-container-low border border-outline-variant rounded-2xl p-lg shadow-sm">
-                                <h3 class="font-headline-md text-headline-md text-on-surface mb-sm flex items-center gap-xs">
+                            <div
+                                class="bg-surface-container-low border border-outline-variant rounded-2xl p-lg shadow-sm">
+                                <h3
+                                    class="font-headline-md text-headline-md text-on-surface mb-sm flex items-center gap-xs">
                                     <span class="material-symbols-outlined text-[#ff9e64] text-[20px]">smart_toy</span>
                                     Tareas Asignadas
                                 </h3>
                                 <div class="space-y-sm text-body-sm text-on-surface-variant leading-relaxed">
-                                    <p>Exploración del árbol Git de world, content, ai y desktop. Análisis del commit de introducción de la lógica IA y pathfinding. Redacción de análisis de decisiones técnicas.</p>
+                                    <p>Exploración del árbol Git de world, content, ai y desktop. Análisis del commit de
+                                        introducción de la lógica IA y pathfinding. Redacción de análisis de decisiones
+                                        técnicas.</p>
                                 </div>
                             </div>
                         </div>
@@ -1179,7 +1220,7 @@
                                     src="./imgs/fig07.png" />
                                 <img alt="Fig 8: git log IA"
                                     class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr4LBxpQ26Ft1NuIEYEmp1Wu813d3zin3O-UyXFu7Io3RlayL7_wJrkXXCl680ghCVgwDcUt6K3OfkCmzcTKX1TMYkKS0ELeyKXv3BEkmsNlwhOaZwL3M9B-wMm-NxT2Bv4uR6iczG3tuzuqO0oZyisA4enIEbqAhDaLWwoVt3jcUoOymqYnYaDqyyD1S2oImulT06TQqrRRd8jNoH7atRFQXtl9H_ZyEBEjdvW6437nlVhij9-YvHE8_gfDNs0khHNBcZKikcp2s" />
+                                    src="./imgs/fig08.png" />
                             </div>
                         </div>
                     </div>
@@ -1189,26 +1230,33 @@
             <section class="slide-container bg-surface-container-low/30">
                 <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
                     <div class="border-b border-outline-variant pb-xs flex items-center gap-sm">
-                        <div class="w-10 h-10 rounded-full bg-[#e0af68] text-white flex items-center justify-center font-bold shadow-md">
+                        <div
+                            class="w-10 h-10 rounded-full bg-[#e0af68] text-white flex items-center justify-center font-bold shadow-md">
                             P3</div>
                         <div>
-                            <h2 class="font-headline-lg text-headline-lg text-primary">CI + Jefe Sprint 1 (Joaquín Quispe)</h2>
-                            <p class="font-body-sm text-body-sm text-on-surface-variant">Flujo CI con GitHub Actions y gestión del Sprint 1.</p>
+                            <h2 class="font-headline-lg text-headline-lg text-primary">CI + Jefe Sprint 1 (Joaquín
+                                Quispe)</h2>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Flujo CI con GitHub Actions y
+                                gestión del Sprint 1.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
                         <!-- Text Col -->
                         <div class="lg:col-span-4 flex flex-col gap-md">
                             <div class="bg-white border border-outline-variant rounded-2xl p-lg shadow-sm">
-                                <h3 class="font-headline-md text-headline-md text-on-surface mb-sm flex items-center gap-xs">
-                                    <span class="material-symbols-outlined text-[#e0af68] text-[20px]">engineering</span>
+                                <h3
+                                    class="font-headline-md text-headline-md text-on-surface mb-sm flex items-center gap-xs">
+                                    <span
+                                        class="material-symbols-outlined text-[#e0af68] text-[20px]">engineering</span>
                                     Tareas Asignadas
                                 </h3>
                                 <div class="mb-sm">
                                 </div>
                                 <div class="space-y-sm text-body-sm text-on-surface-variant leading-relaxed">
-                                    <p><strong>Como CI:</strong> Configuración del flujo de integración continua (ci.yml) con validación de build y tests end-to-end.</p>
-                                    <p><strong>Como Jefe Sprint 1:</strong> Verificación de entregables de P1 y P2, análisis del Kanban y redacción de la retrospectiva del Sprint 1.</p>
+                                    <p><strong>Como CI:</strong> Configuración del flujo de integración continua
+                                        (ci.yml) con validación de build y tests end-to-end.</p>
+                                    <p><strong>Como Jefe Sprint 1:</strong> Verificación de entregables de P1 y P2,
+                                        análisis del Kanban y redacción de la retrospectiva del Sprint 1.</p>
                                 </div>
                             </div>
                         </div>
@@ -1244,23 +1292,30 @@
             <section class="slide-container bg-surface-container-lowest">
                 <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
                     <div class="border-b border-outline-variant pb-xs flex items-center gap-sm">
-                        <div class="w-10 h-10 rounded-full bg-[#9ece6a] text-white flex items-center justify-center font-bold shadow-md">
+                        <div
+                            class="w-10 h-10 rounded-full bg-[#9ece6a] text-white flex items-center justify-center font-bold shadow-md">
                             P4</div>
                         <div>
-                            <h2 class="font-headline-lg text-headline-lg text-primary">Android + Guardado + Editor (Sandra Aliaga)</h2>
-                            <p class="font-body-sm text-body-sm text-on-surface-variant">Análisis de la arquitectura de la app móvil y el guardado.</p>
+                            <h2 class="font-headline-lg text-headline-lg text-primary">Android + Guardado + Editor
+                                (Sandra Aliaga)</h2>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Análisis de la arquitectura de
+                                la app móvil y el guardado.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
                         <!-- Text Col -->
                         <div class="lg:col-span-4 flex flex-col gap-md">
-                            <div class="bg-surface-container-low border border-outline-variant rounded-2xl p-lg shadow-sm">
-                                <h3 class="font-headline-md text-headline-md text-on-surface mb-sm flex items-center gap-xs">
+                            <div
+                                class="bg-surface-container-low border border-outline-variant rounded-2xl p-lg shadow-sm">
+                                <h3
+                                    class="font-headline-md text-headline-md text-on-surface mb-sm flex items-center gap-xs">
                                     <span class="material-symbols-outlined text-[#9ece6a] text-[20px]">event</span>
                                     Tareas Asignadas
                                 </h3>
                                 <div class="space-y-sm text-body-sm text-on-surface-variant leading-relaxed">
-                                    <p>Exploración de los módulos de Android, guardado y editor. Análisis histórico de commits clave (2017) y redacción de decisiones técnicas sobre la arquitectura móvil y persistencia.</p>
+                                    <p>Exploración de los módulos de Android, guardado y editor. Análisis histórico de
+                                        commits clave (2017) y redacción de decisiones técnicas sobre la arquitectura
+                                        móvil y persistencia.</p>
                                 </div>
                             </div>
                         </div>
@@ -1296,24 +1351,30 @@
             <section class="slide-container bg-surface-container-low/30">
                 <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
                     <div class="border-b border-outline-variant pb-xs flex items-center gap-sm">
-                        <div class="w-10 h-10 rounded-full bg-[#7aa2f7] text-white flex items-center justify-center font-bold shadow-md">
+                        <div
+                            class="w-10 h-10 rounded-full bg-[#7aa2f7] text-white flex items-center justify-center font-bold shadow-md">
                             P5</div>
                         <div>
-                            <h2 class="font-headline-lg text-headline-lg text-primary">CD + Jefe Sprint 2 (Karla Bedregal)</h2>
-                            <p class="font-body-sm text-body-sm text-on-surface-variant">Flujo CD con GitHub Actions y gestión del Sprint 2.</p>
+                            <h2 class="font-headline-lg text-headline-lg text-primary">CD + Jefe Sprint 2 (Karla
+                                Bedregal)</h2>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Flujo CD con GitHub Actions y
+                                gestión del Sprint 2.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
                         <!-- Text Col -->
                         <div class="lg:col-span-4 flex flex-col gap-md">
                             <div class="bg-white border border-outline-variant rounded-2xl p-lg shadow-sm">
-                                <h3 class="font-headline-md text-headline-md text-on-surface mb-sm flex items-center gap-xs">
+                                <h3
+                                    class="font-headline-md text-headline-md text-on-surface mb-sm flex items-center gap-xs">
                                     <span class="material-symbols-outlined text-[#7aa2f7] text-[20px]">assignment</span>
                                     Tareas Asignadas
                                 </h3>
                                 <div class="space-y-sm text-body-sm text-on-surface-variant leading-relaxed">
-                                    <p><strong>Como CD:</strong> Creación del pipeline de despliegue continuo (cd.yml) para generar releases automáticos con el JAR y actualizar GitHub Pages.</p>
-                                    <p><strong>Como Jefe Sprint 2:</strong> Verificación de entregables de P4 y P6, análisis del Kanban y redacción de la retrospectiva del Sprint 2.</p>
+                                    <p><strong>Como CD:</strong> Creación del pipeline de despliegue continuo (cd.yml)
+                                        para generar releases automáticos con el JAR y actualizar GitHub Pages.</p>
+                                    <p><strong>Como Jefe Sprint 2:</strong> Verificación de entregables de P4 y P6,
+                                        análisis del Kanban y redacción de la retrospectiva del Sprint 2.</p>
                                 </div>
                             </div>
                         </div>
@@ -1335,12 +1396,7 @@
                                 <img alt="Fig 22"
                                     class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
                                     src="./imgs/fig22.png" />
-                                <img alt="Fig 23"
-                                    class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
-                                    src="./imgs/fig23.png" />
-                                <img alt="Fig 24"
-                                    class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
-                                    src="./imgs/fig24.png" />
+
                             </div>
                         </div>
                     </div>
@@ -1350,23 +1406,29 @@
             <section class="slide-container bg-surface-container-lowest">
                 <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
                     <div class="border-b border-outline-variant pb-xs flex items-center gap-sm">
-                        <div class="w-10 h-10 rounded-full bg-[#bb9af7] text-white flex items-center justify-center font-bold shadow-md">
+                        <div
+                            class="w-10 h-10 rounded-full bg-[#bb9af7] text-white flex items-center justify-center font-bold shadow-md">
                             P6</div>
                         <div>
                             <h2 class="font-headline-lg text-headline-lg text-primary">GitHub Pages (Rodrigo Layme)</h2>
-                            <p class="font-body-sm text-body-sm text-on-surface-variant">Despliegue del sitio en GitHub Pages y coordinación del HTML.</p>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Despliegue del sitio en GitHub
+                                Pages y coordinación del HTML.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
                         <!-- Text Col -->
                         <div class="lg:col-span-4 flex flex-col gap-md">
-                            <div class="bg-surface-container-low border border-outline-variant rounded-2xl p-lg shadow-sm">
-                                <h3 class="font-headline-md text-headline-md text-on-surface mb-sm flex items-center gap-xs">
+                            <div
+                                class="bg-surface-container-low border border-outline-variant rounded-2xl p-lg shadow-sm">
+                                <h3
+                                    class="font-headline-md text-headline-md text-on-surface mb-sm flex items-center gap-xs">
                                     <span class="material-symbols-outlined text-[#bb9af7] text-[20px]">cloud_sync</span>
                                     Tareas Asignadas
                                 </h3>
                                 <div class="space-y-sm text-body-sm text-on-surface-variant leading-relaxed">
-                                    <p>Actualización del HTML del sitio incorporando las secciones del Sprint 1 y 2 con sus respectivos resúmenes, badges y cronograma. Coordinación del flujo de despliegue en GitHub Pages.</p>
+                                    <p>Actualización del HTML del sitio incorporando las secciones del Sprint 1 y 2 con
+                                        sus respectivos resúmenes, badges y cronograma. Coordinación del flujo de
+                                        despliegue en GitHub Pages.</p>
                                 </div>
                             </div>
                         </div>
@@ -1376,10 +1438,10 @@
                             <h3 class="font-headline-md text-headline-md text-on-surface mb-md">Evidencia Visual (2)
                             </h3>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
-                                <img alt="Fig 25"
+                                <img alt="Fig 23"
                                     class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
                                     src="./imgs/fig25.png" />
-                                <img alt="Fig 26"
+                                <img alt="Fig 24"
                                     class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
                                     src="./imgs/fig26.png" />
                             </div>
@@ -1585,7 +1647,7 @@
                 review: document.getElementById('kanban-review'),
                 done: document.getElementById('kanban-done')
             };
-            
+
             if (!cols.backlog) return;
 
             const iconSync = document.querySelector('#refresh-kanban-btn .material-symbols-outlined');
@@ -1598,16 +1660,16 @@
                 });
 
                 if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
-                
+
                 const issues = await response.json();
-                
+
                 Object.values(cols).forEach(c => c.innerHTML = '');
-                
+
                 let counts = { backlog: 0, sprint: 0, inprogress: 0, review: 0, done: 0 };
 
                 issues.forEach(issue => {
                     let status = 'backlog';
-                    
+
                     if (issue.state === 'closed') {
                         status = 'done';
                     } else if (issue.pull_request) {
@@ -1617,7 +1679,7 @@
                     } else {
                         status = 'backlog';
                     }
-                    
+
                     // Allow label override
                     if (status !== 'done') {
                         const lbls = issue.labels.map(l => l.name.toLowerCase());
@@ -1659,7 +1721,7 @@
                 document.getElementById('count-done').textContent = counts.done;
 
                 const emptyMsg = (icon, text) => `<div class="text-center text-outline-variant text-xs py-6 flex flex-col items-center gap-2"><span class="material-symbols-outlined text-[24px]">${icon}</span>${text}</div>`;
-                
+
                 if (counts.backlog === 0) cols.backlog.innerHTML = emptyMsg('inventory_2', 'No hay tareas');
                 if (counts.sprint === 0) cols.sprint.innerHTML = emptyMsg('directions_run', 'No hay tareas activas');
                 if (counts.inprogress === 0) cols.inprogress.innerHTML = emptyMsg('pending_actions', 'Nada en progreso');
