@@ -1435,7 +1435,7 @@
                         const statusIcon = isSuccess ? 'check_circle' : (isFailure ? 'cancel' : 'sync');
                         const spinClass = (!isSuccess && !isFailure && run.status !== 'completed') ? 'animate-spin' : '';
 
-                        const commitMsg = run.head_commit ? run.head_commit.message.split('\\n')[0] : 'Sin mensaje de commit';
+                        const commitMsg = (run.head_commit && run.head_commit.message) ? run.head_commit.message.split('\n')[0] : 'Sin mensaje de commit';
                         const runDate = new Date(run.updated_at).toLocaleString('es-ES', {
                             day: '2-digit', month: '2-digit', year: 'numeric',
                             hour: '2-digit', minute: '2-digit'
@@ -1468,11 +1468,9 @@
             }
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Ejecutar inmediatamente y luego cada 30 segundos
-            fetchGitHubActions();
-            setInterval(fetchGitHubActions, 30000);
-        });
+        // Ejecutar inmediatamente y luego cada 30 segundos ya que el script está al final del body
+        fetchGitHubActions();
+        setInterval(fetchGitHubActions, 30000);
     </script>
     </body>
 
