@@ -315,715 +315,685 @@
                 currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
                 showImage();
             }
-                function closeLightbox() {
-                    lightbox.classList.remove('active');
-                }
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+            }
 
-                nextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextImage(); });
-                prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevImage(); });
-                closeBtn.addEventListener('click', closeLightbox);
-                lightbox.addEventListener('click', (e) => {
-                    if (e.target === lightbox) closeLightbox();
-                });
-
-                document.addEventListener('keydown', (e) => {
-                    if (!lightbox.classList.contains('active')) return;
-                    if (e.key === 'Escape') closeLightbox();
-                    if (e.key === 'ArrowRight') nextImage();
-                    if (e.key === 'ArrowLeft') prevImage();
-                });
+            nextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextImage(); });
+            prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevImage(); });
+            closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
             });
-        </script>
-        <!-- Lightbox Modal -->
-        <div id="lightbox">
-            <button id="lightbox-close"><span class="material-symbols-outlined">close</span></button>
-            <button class="lightbox-nav" id="lightbox-prev"><span
-                    class="material-symbols-outlined">chevron_left</span></button>
-            <img alt="Lightbox Image" id="lightbox-img" src="" />
-            <button class="lightbox-nav" id="lightbox-next"><span
-                    class="material-symbols-outlined">chevron_right</span></button>
-        </div>
-        <!-- Simple Header -->
-        <header class="bg-surface-container-lowest border-b border-outline-variant sticky top-0 z-50 shadow-sm">
-            <div
-                class="flex items-center justify-between w-full px-margin-mobile md:px-margin-desktop h-16 max-w-7xl mx-auto">
-                <div class="flex items-center gap-sm">
-                    <img alt="Mindustry Logo" class="h-8 w-8 object-contain rounded"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnABf_eit-swnpj5cZ8DcYYBpcCV3Fji2wulhiAqi1rYxsdpBIHyVCFSqkH89aFejBFKdl88dbodbSMFYpBsIIqXhlC8uFNvtMpT-zkkQn-3Ds59BCBQUdCE8Oo1sDWuN3sWlX6p7mSpZXqleAEjPK_eyjhnHH4d5xGIjPweZy_RYHAQTmD-D7FZmVaFNCwQTDMct-E3kP2PHEagMPYThSvw9U6EqjcBrOnh-wDlojXZfMEKgjvVsnJ6mt0_8T_y_oZyNGXwDjLV8" />
-                    <span class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">Mindustry
-                        Analysis</span>
-                </div>
-                <a class="hidden md:inline-flex items-center gap-xs font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-                    href="https://github.com" target="_blank">
-                    <span class="material-symbols-outlined text-[18px]">code</span>
-                    <span>Repository</span>
-                </a>
+
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            });
+        });
+    </script>
+    <!-- Lightbox Modal -->
+    <div id="lightbox">
+        <button id="lightbox-close"><span class="material-symbols-outlined">close</span></button>
+        <button class="lightbox-nav" id="lightbox-prev"><span
+                class="material-symbols-outlined">chevron_left</span></button>
+        <img alt="Lightbox Image" id="lightbox-img" src="" />
+        <button class="lightbox-nav" id="lightbox-next"><span
+                class="material-symbols-outlined">chevron_right</span></button>
+    </div>
+    <!-- Simple Header -->
+    <header class="bg-surface-container-lowest border-b border-outline-variant sticky top-0 z-50 shadow-sm">
+        <div
+            class="flex items-center justify-between w-full px-margin-mobile md:px-margin-desktop h-16 max-w-7xl mx-auto">
+            <div class="flex items-center gap-sm">
+                <img alt="Mindustry Logo" class="h-8 w-8 object-contain rounded"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnABf_eit-swnpj5cZ8DcYYBpcCV3Fji2wulhiAqi1rYxsdpBIHyVCFSqkH89aFejBFKdl88dbodbSMFYpBsIIqXhlC8uFNvtMpT-zkkQn-3Ds59BCBQUdCE8Oo1sDWuN3sWlX6p7mSpZXqleAEjPK_eyjhnHH4d5xGIjPweZy_RYHAQTmD-D7FZmVaFNCwQTDMct-E3kP2PHEagMPYThSvw9U6EqjcBrOnh-wDlojXZfMEKgjvVsnJ6mt0_8T_y_oZyNGXwDjLV8" />
+                <span class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">Mindustry
+                    Analysis</span>
             </div>
-        </header>
-        <main class="w-full">
-            <!-- Hito Selector -->
-            <section class="bg-surface-container-low border-b border-outline-variant py-lg sticky top-16 z-40">
-                <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop flex justify-center">
-                    <div class="inline-flex bg-surface-container-lowest p-xs rounded-xl border border-outline-variant shadow-md"
-                        role="tablist">
-                        <button aria-controls="hito1" aria-selected="false"
-                            class="tab-btn px-lg py-sm rounded-lg font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-container transition-all flex flex-col items-center min-w-[140px]"
-                            data-target="hito1" role="tab">
-                            <span class="text-[14px]">Hito 1</span>
-                            <span class="text-[10px] font-normal opacity-80 mt-xs uppercase">Planificación</span>
-                        </button>
-                        <button aria-controls="hito2" aria-selected="true"
-                            class="tab-btn px-lg py-sm rounded-lg font-label-caps text-label-caps text-on-primary bg-primary shadow-sm transition-all flex flex-col items-center min-w-[140px]"
-                            data-target="hito2" role="tab">
-                            <span class="text-[14px]">Hito 2</span>
-                            <span class="text-[10px] font-normal opacity-80 mt-xs uppercase">Implementación</span>
-                        </button>
-                        <button aria-controls="hito3" aria-selected="false"
-                            class="tab-btn px-lg py-sm rounded-lg font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-container transition-all flex flex-col items-center min-w-[140px]"
-                            data-target="hito3" role="tab">
-                            <span class="text-[14px]">Hito 3</span>
-                            <span class="text-[10px] font-normal opacity-80 mt-xs uppercase">Entrega Final</span>
-                        </button>
+            <a class="hidden md:inline-flex items-center gap-xs font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                href="https://github.com" target="_blank">
+                <span class="material-symbols-outlined text-[18px]">code</span>
+                <span>Repository</span>
+            </a>
+        </div>
+    </header>
+    <main class="w-full">
+        <!-- Hito Selector -->
+        <section class="bg-surface-container-low border-b border-outline-variant py-lg sticky top-16 z-40">
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop flex justify-center">
+                <div class="inline-flex bg-surface-container-lowest p-xs rounded-xl border border-outline-variant shadow-md"
+                    role="tablist">
+                    <button aria-controls="hito1" aria-selected="false"
+                        class="tab-btn px-lg py-sm rounded-lg font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-container transition-all flex flex-col items-center min-w-[140px]"
+                        data-target="hito1" role="tab">
+                        <span class="text-[14px]">Hito 1</span>
+                        <span class="text-[10px] font-normal opacity-80 mt-xs uppercase">Planificación</span>
+                    </button>
+                    <button aria-controls="hito2" aria-selected="true"
+                        class="tab-btn px-lg py-sm rounded-lg font-label-caps text-label-caps text-on-primary bg-primary shadow-sm transition-all flex flex-col items-center min-w-[140px]"
+                        data-target="hito2" role="tab">
+                        <span class="text-[14px]">Hito 2</span>
+                        <span class="text-[10px] font-normal opacity-80 mt-xs uppercase">Implementación</span>
+                    </button>
+                    <button aria-controls="hito3" aria-selected="false"
+                        class="tab-btn px-lg py-sm rounded-lg font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-container transition-all flex flex-col items-center min-w-[140px]"
+                        data-target="hito3" role="tab">
+                        <span class="text-[14px]">Hito 3</span>
+                        <span class="text-[10px] font-normal opacity-80 mt-xs uppercase">Entrega Final</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Content for Hito 1 -->
+        <div class="tab-content" id="hito1" role="tabpanel">
+            <!-- Section: Analysis -->
+            <section class="slide-container bg-surface-container-lowest">
+                <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
+                    <div class="border-b border-outline-variant pb-xs">
+                        <div class="flex items-center gap-sm mb-xs">
+                            <span class="material-symbols-outlined text-secondary">info</span>
+                            <h2 class="font-headline-lg text-headline-lg text-primary">Sobre el proyecto
+                                seleccionado</h2>
+                        </div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant">Detalles técnicos y
+                            fundamentación de la elección de Mindustry como objeto de estudio.</p>
+                    </div>
+                    <div class="bg-surface rounded-2xl border border-outline-variant p-xl shadow-sm">
+                        <h3 class="font-headline-md text-headline-md text-on-surface mb-lg">Análisis por Criterio
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-xl">
+                            <!-- Licencia -->
+                            <div class="flex flex-col gap-xs p-md bg-white rounded-xl border border-outline-variant/30">
+                                <div class="flex items-center gap-xs text-secondary">
+                                    <span class="material-symbols-outlined text-[20px]">verified</span>
+                                    <span class="font-label-caps text-label-caps">Licencia</span>
+                                </div>
+                                <p class="font-body-md text-body-md text-on-surface font-bold text-lg">GPL (Open
+                                    Source)</p>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Código totalmente
+                                    accesible bajo la GNU General Public License v3.0, ideal para auditoría de
+                                    software.</p>
+                            </div>
+                            <!-- Dominio -->
+                            <div class="flex flex-col gap-xs p-md bg-white rounded-xl border border-outline-variant/30">
+                                <div class="flex items-center gap-xs text-secondary">
+                                    <span class="material-symbols-outlined text-[20px]">category</span>
+                                    <span class="font-label-caps text-label-caps">Dominio</span>
+                                </div>
+                                <p class="font-body-md text-body-md text-on-surface font-bold text-lg">Tower Defense
+                                    RTS</p>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Automatización
+                                    industrial combinada con estrategia en tiempo real y simulación de redes
+                                    logísticas.</p>
+                            </div>
+                            <!-- Complejidad -->
+                            <div class="flex flex-col gap-xs p-md bg-white rounded-xl border border-outline-variant/30">
+                                <div class="flex items-center gap-xs text-secondary">
+                                    <span class="material-symbols-outlined text-[20px]">account_tree</span>
+                                    <span class="font-label-caps text-label-caps">Complejidad</span>
+                                </div>
+                                <p class="font-body-md text-body-md text-on-surface font-bold text-lg">8 módulos |
+                                    &gt;10 KLOC</p>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Estructura modular:
+                                    desktop, core, server, ios, android, annotations, tools y tests.</p>
+                                <div class="flex flex-wrap gap-1 mt-2">
+                                    <span
+                                        class="bg-secondary/10 text-secondary text-[10px] font-bold px-2 py-0.5 rounded uppercase">Java
+                                        17</span>
+                                    <span
+                                        class="bg-secondary/10 text-secondary text-[10px] font-bold px-2 py-0.5 rounded uppercase">LibGDX</span>
+                                    <span
+                                        class="bg-secondary/10 text-secondary text-[10px] font-bold px-2 py-0.5 rounded uppercase">Multiplatform</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
-            <!-- Content for Hito 1 -->
-            <div class="tab-content" id="hito1" role="tabpanel">
-                <!-- Section: Analysis -->
-                <section class="slide-container bg-surface-container-lowest">
-                    <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
-                        <div class="border-b border-outline-variant pb-xs">
-                            <div class="flex items-center gap-sm mb-xs">
-                                <span class="material-symbols-outlined text-secondary">info</span>
-                                <h2 class="font-headline-lg text-headline-lg text-primary">Sobre el proyecto
-                                    seleccionado</h2>
-                            </div>
-                            <p class="font-body-sm text-body-sm text-on-surface-variant">Detalles técnicos y
-                                fundamentación de la elección de Mindustry como objeto de estudio.</p>
+            <!-- Section: Kanban -->
+            <section class="slide-container bg-surface-container-low/50">
+                <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
+                    <div class="border-b border-outline-variant pb-xs">
+                        <div class="flex items-center gap-sm mb-xs">
+                            <span class="material-symbols-outlined text-secondary">view_kanban</span>
+                            <h2 class="font-headline-lg text-headline-lg text-primary">Gestión de Proyecto</h2>
                         </div>
-                        <div class="bg-surface rounded-2xl border border-outline-variant p-xl shadow-sm">
-                            <h3 class="font-headline-md text-headline-md text-on-surface mb-lg">Análisis por Criterio
-                            </h3>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-xl">
-                                <!-- Licencia -->
-                                <div
-                                    class="flex flex-col gap-xs p-md bg-white rounded-xl border border-outline-variant/30">
-                                    <div class="flex items-center gap-xs text-secondary">
-                                        <span class="material-symbols-outlined text-[20px]">verified</span>
-                                        <span class="font-label-caps text-label-caps">Licencia</span>
-                                    </div>
-                                    <p class="font-body-md text-body-md text-on-surface font-bold text-lg">GPL (Open
-                                        Source)</p>
-                                    <p class="font-body-sm text-body-sm text-on-surface-variant">Código totalmente
-                                        accesible bajo la GNU General Public License v3.0, ideal para auditoría de
-                                        software.</p>
-                                </div>
-                                <!-- Dominio -->
-                                <div
-                                    class="flex flex-col gap-xs p-md bg-white rounded-xl border border-outline-variant/30">
-                                    <div class="flex items-center gap-xs text-secondary">
-                                        <span class="material-symbols-outlined text-[20px]">category</span>
-                                        <span class="font-label-caps text-label-caps">Dominio</span>
-                                    </div>
-                                    <p class="font-body-md text-body-md text-on-surface font-bold text-lg">Tower Defense
-                                        RTS</p>
-                                    <p class="font-body-sm text-body-sm text-on-surface-variant">Automatización
-                                        industrial combinada con estrategia en tiempo real y simulación de redes
-                                        logísticas.</p>
-                                </div>
-                                <!-- Complejidad -->
-                                <div
-                                    class="flex flex-col gap-xs p-md bg-white rounded-xl border border-outline-variant/30">
-                                    <div class="flex items-center gap-xs text-secondary">
-                                        <span class="material-symbols-outlined text-[20px]">account_tree</span>
-                                        <span class="font-label-caps text-label-caps">Complejidad</span>
-                                    </div>
-                                    <p class="font-body-md text-body-md text-on-surface font-bold text-lg">8 módulos |
-                                        &gt;10 KLOC</p>
-                                    <p class="font-body-sm text-body-sm text-on-surface-variant">Estructura modular:
-                                        desktop, core, server, ios, android, annotations, tools y tests.</p>
-                                    <div class="flex flex-wrap gap-1 mt-2">
-                                        <span
-                                            class="bg-secondary/10 text-secondary text-[10px] font-bold px-2 py-0.5 rounded uppercase">Java
-                                            17</span>
-                                        <span
-                                            class="bg-secondary/10 text-secondary text-[10px] font-bold px-2 py-0.5 rounded uppercase">LibGDX</span>
-                                        <span
-                                            class="bg-secondary/10 text-secondary text-[10px] font-bold px-2 py-0.5 rounded uppercase">Multiplatform</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant">Organización de tareas mediante
+                            metodologías ágiles y seguimiento en tiempo real.</p>
                     </div>
-                </section>
-                <!-- Section: Kanban -->
-                <section class="slide-container bg-surface-container-low/50">
-                    <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
-                        <div class="border-b border-outline-variant pb-xs">
-                            <div class="flex items-center gap-sm mb-xs">
-                                <span class="material-symbols-outlined text-secondary">view_kanban</span>
-                                <h2 class="font-headline-lg text-headline-lg text-primary">Gestión de Proyecto</h2>
-                            </div>
-                            <p class="font-body-sm text-body-sm text-on-surface-variant">Organización de tareas mediante
-                                metodologías ágiles y seguimiento en tiempo real.</p>
-                        </div>
-                        <div
-                            class="bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden shadow-lg group relative">
-                            <!-- INSERT KANBAN BOARD IMAGE PATH HERE -->
-                            <div
-                                class="aspect-[21/9] bg-gradient-to-br from-surface-container-low to-surface-container flex flex-col items-center justify-center text-center p-xl relative">
-                                <div
-                                    class="absolute inset-0 opacity-10 bg-[radial-gradient(#4648d4_1px,transparent_1px)] bg-[size:24px_24px]">
-                                </div>
-                                <div class="relative z-10 flex flex-col items-center max-w-lg">
-                                    <div
-                                        class="w-20 h-20 bg-white rounded-2xl shadow-md flex items-center justify-center mb-lg text-secondary border border-outline-variant/30">
-                                        <span class="material-symbols-outlined text-5xl">developer_board</span>
-                                    </div>
-                                    <h3 class="font-headline-md text-headline-md text-on-surface">Tablero GitHub
-                                        Projects</h3>
-                                    <p class="font-body-md text-body-md text-on-surface-variant mt-md">Visualización
-                                        detallada de los Sprints, Backlog y flujo de trabajo (To Do, In Progress,
-                                        Review, Done) para el desarrollo de Mindustry.</p>
-                                    <a class="mt-xl inline-flex items-center gap-sm font-label-caps text-label-caps bg-primary text-on-primary px-lg py-sm rounded-lg hover:bg-on-primary-fixed transition-all shadow-md group-hover:scale-105"
-                                        href="javascript:void(0);">
-                                        Explorar Tablero en GitHub <span
-                                            class="material-symbols-outlined text-[18px]">open_in_new</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- Section: Team -->
-                <section class="slide-container bg-surface-container-lowest">
-                    <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
-                        <div class="border-b border-outline-variant pb-xs">
-                            <div class="flex items-center gap-sm mb-xs">
-                                <span class="material-symbols-outlined text-secondary">groups</span>
-                                <h2 class="font-headline-lg text-headline-lg text-primary">Asignación de Equipo</h2>
-                            </div>
-                            <p class="font-body-sm text-body-sm text-on-surface-variant">Roles específicos y
-                                distribución de responsabilidades técnicas dentro del grupo.</p>
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-lg">
-                            <div
-                                class="bg-surface border border-outline-variant rounded-2xl p-lg flex flex-col gap-md shadow-sm hover:border-secondary/50 transition-all group">
-                                <div class="flex items-center gap-md">
-                                    <div
-                                        class="bg-secondary/10 p-sm rounded-xl text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
-                                        <span class="material-symbols-outlined text-[32px]">person</span>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-headline-md text-headline-md text-on-surface text-[18px]">
-                                            Rodrigo Layme</h3>
-                                        <p class="font-label-caps text-[11px] text-secondary tracking-widest uppercase">
-                                            Líder de Proyecto</p>
-                                    </div>
-                                </div>
-                                <p
-                                    class="font-body-sm text-body-sm text-on-surface-variant border-t border-outline-variant/30 pt-md">
-                                    Responsable del despliegue en GitHub Pages, coordinación general y consistencia
-                                    visual del portal.</p>
-                            </div>
-                            <div
-                                class="bg-surface border border-outline-variant rounded-2xl p-lg flex flex-col gap-md shadow-sm hover:border-secondary/50 transition-all group">
-                                <div class="flex items-center gap-md">
-                                    <div
-                                        class="bg-secondary/10 p-sm rounded-xl text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
-                                        <span class="material-symbols-outlined text-[32px]">assignment</span>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-headline-md text-headline-md text-on-surface text-[18px]">Karla
-                                            Bedregal</h3>
-                                        <p class="font-label-caps text-[11px] text-secondary tracking-widest uppercase">
-                                            Gestión de Issues</p>
-                                    </div>
-                                </div>
-                                <p
-                                    class="font-body-sm text-body-sm text-on-surface-variant border-t border-outline-variant/30 pt-md">
-                                    Administración del backlog, etiquetado de historias de usuario y control de hitos en
-                                    GitHub Projects.</p>
-                            </div>
-                            <div
-                                class="bg-surface border border-outline-variant rounded-2xl p-lg flex flex-col gap-md shadow-sm hover:border-secondary/50 transition-all group">
-                                <div class="flex items-center gap-md">
-                                    <div
-                                        class="bg-secondary/10 p-sm rounded-xl text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
-                                        <span class="material-symbols-outlined text-[32px]">history_edu</span>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-headline-md text-headline-md text-on-surface text-[18px]">
-                                            Joaquín Quispe</h3>
-                                        <p class="font-label-caps text-[11px] text-secondary tracking-widest uppercase">
-                                            Analista de Historial</p>
-                                    </div>
-                                </div>
-                                <p
-                                    class="font-body-sm text-body-sm text-on-surface-variant border-t border-outline-variant/30 pt-md">
-                                    Extracción y documentación del historial Git para identificar patrones de desarrollo
-                                    y hitos clave.</p>
-                            </div>
-                            <div
-                                class="bg-surface border border-outline-variant rounded-2xl p-lg flex flex-col gap-md shadow-sm hover:border-secondary/50 transition-all group">
-                                <div class="flex items-center gap-md">
-                                    <div
-                                        class="bg-secondary/10 p-sm rounded-xl text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
-                                        <span class="material-symbols-outlined text-[32px]">terminal</span>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-headline-md text-headline-md text-on-surface text-[18px]">Tania
-                                            Ayque</h3>
-                                        <p class="font-label-caps text-[11px] text-secondary tracking-widest uppercase">
-                                            Especialista Técnica</p>
-                                    </div>
-                                </div>
-                                <p
-                                    class="font-body-sm text-body-sm text-on-surface-variant border-t border-outline-variant/30 pt-md">
-                                    Definición y análisis del stack tecnológico (Java, Arc, SDL2) y su integración en el
-                                    flujo de desarrollo.</p>
-                            </div>
-                            <div
-                                class="bg-surface border border-outline-variant rounded-2xl p-lg flex flex-col gap-md shadow-sm hover:border-secondary/50 transition-all group">
-                                <div class="flex items-center gap-md">
-                                    <div
-                                        class="bg-secondary/10 p-sm rounded-xl text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
-                                        <span class="material-symbols-outlined text-[32px]">architecture</span>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-headline-md text-headline-md text-on-surface text-[18px]">Jack
-                                            Llaique</h3>
-                                        <p class="font-label-caps text-[11px] text-secondary tracking-widest uppercase">
-                                            Arquitecto Software</p>
-                                    </div>
-                                </div>
-                                <p
-                                    class="font-body-sm text-body-sm text-on-surface-variant border-t border-outline-variant/30 pt-md">
-                                    Diseño de la estructura modular y supervisión de la coherencia técnica entre los 8
-                                    módulos del proyecto.</p>
-                            </div>
-                            <div
-                                class="bg-surface border border-outline-variant rounded-2xl p-lg flex flex-col gap-md shadow-sm hover:border-secondary/50 transition-all group">
-                                <div class="flex items-center gap-md">
-                                    <div
-                                        class="bg-secondary/10 p-sm rounded-xl text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
-                                        <span class="material-symbols-outlined text-[32px]">event_repeat</span>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-headline-md text-headline-md text-on-surface text-[18px]">Sandra
-                                            Aliaga</h3>
-                                        <p class="font-label-caps text-[11px] text-secondary tracking-widest uppercase">
-                                            Planificadora Scrum</p>
-                                    </div>
-                                </div>
-                                <p
-                                    class="font-body-sm text-body-sm text-on-surface-variant border-t border-outline-variant/30 pt-md">
-                                    Definición de ceremonias Scrum, cronograma de Sprints y métricas de velocidad del
-                                    equipo.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- Section: Git History -->
-                <section class="slide-container bg-surface-container-low/30">
-                    <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
-                        <div class="border-b border-outline-variant pb-xs">
-                            <div class="flex items-center gap-sm mb-xs">
-                                <span class="material-symbols-outlined text-secondary">account_tree</span>
-                                <h2 class="font-headline-lg text-headline-lg text-primary">Análisis del Historial Git
-                                </h2>
-                            </div>
-                            <p class="font-body-sm text-body-sm text-on-surface-variant">Línea de tiempo detallada sobre
-                                la evolución del repositorio oficial.</p>
-                        </div>
-                        <div class="bg-white border border-outline-variant rounded-2xl p-xl shadow-sm">
-                            <div class="relative border-l-4 border-surface-container-high ml-4 space-y-12 py-4">
-                                <!-- Event 1 -->
-                                <div class="relative pl-10">
-                                    <div
-                                        class="absolute -left-[14px] top-1 h-6 w-6 rounded-full bg-secondary border-4 border-white shadow-sm">
-                                    </div>
-                                    <div
-                                        class="bg-surface-container-low rounded-xl p-lg border border-outline-variant/50 max-w-3xl hover:shadow-md transition-shadow">
-                                        <div class="flex items-center justify-between mb-2">
-                                            <span class="font-code-sm text-code-sm font-bold text-secondary">Abril 2017
-                                                - Commit Inicial</span>
-                                            <span
-                                                class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded-full font-bold">FOUNDATION</span>
-                                        </div>
-                                        <p class="font-body-md text-body-md text-on-surface leading-relaxed">
-                                            Creación oficial por Anuken. El primer commit ya presentaba una arquitectura
-                                            robusta incluyendo módulos de IA, entidades, mundo y el ejecutable desktop
-                                            inicial basado en el motor Arc (un fork avanzado de LibGDX).
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- Event 2 -->
-                                <div class="relative pl-10">
-                                    <div
-                                        class="absolute -left-[14px] top-1 h-6 w-6 rounded-full bg-surface-tint border-4 border-white shadow-sm">
-                                    </div>
-                                    <div
-                                        class="bg-surface-container-low rounded-xl p-lg border border-outline-variant/50 max-w-3xl hover:shadow-md transition-shadow">
-                                        <div class="flex items-center justify-between mb-2">
-                                            <span class="font-code-sm text-code-sm font-bold text-surface-tint">Agosto
-                                                2018 - Versión Alpha &amp; Mobile</span>
-                                            <span
-                                                class="text-[10px] bg-surface-tint/10 text-surface-tint px-2 py-0.5 rounded-full font-bold">EXPANSION</span>
-                                        </div>
-                                        <p class="font-body-md text-body-md text-on-surface leading-relaxed">
-                                            Estabilización de las mecánicas core de recolección y logística. Se
-                                            introdujo el soporte oficial para Android, demostrando la capacidad
-                                            multiplataforma real del motor Arc mediante una abstracción total de inputs.
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- Event 3 -->
-                                <div class="relative pl-10">
-                                    <div
-                                        class="absolute -left-[14px] top-1 h-6 w-6 rounded-full bg-primary border-4 border-white shadow-sm">
-                                    </div>
-                                    <div
-                                        class="bg-surface-container-low rounded-xl p-lg border border-outline-variant/50 max-w-3xl hover:shadow-md transition-shadow">
-                                        <div class="flex items-center justify-between mb-2">
-                                            <span class="font-code-sm text-code-sm font-bold text-primary">Septiembre
-                                                2019 - v5 &amp; Steam Release</span>
-                                            <span
-                                                class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-bold">MATURITY</span>
-                                        </div>
-                                        <p class="font-body-md text-body-md text-on-surface leading-relaxed">
-                                            Lanzamiento en Steam con integración de multijugador robusto (ArcNet),
-                                            campañas mundiales y soporte para Mods vía Rhino JS. Este hito marcó la
-                                            transición de un proyecto indie a un ecosistema de software completo.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- Section: Stack Technical -->
-                <section class="slide-container bg-surface-container-lowest">
-                    <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
-                        <div class="border-b border-outline-variant pb-xs">
-                            <div class="flex items-center gap-sm mb-xs">
-                                <span class="material-symbols-outlined text-secondary">memory</span>
-                                <h2 class="font-headline-lg text-headline-lg text-primary">Análisis del Stack Técnico
-                                </h2>
-                            </div>
-                            <p class="font-body-sm text-body-sm text-on-surface-variant">Tecnologías y arquitectura de
-                                software empleadas en la solución.</p>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
-                            <div class="bg-white border border-outline-variant rounded-2xl p-xl shadow-sm">
-                                <h3
-                                    class="font-headline-md text-headline-md text-on-surface mb-lg flex items-center gap-xs">
-                                    <span class="material-symbols-outlined text-secondary">terminal</span> Tecnologías
-                                    Identificadas
-                                </h3>
-                                <div class="space-y-lg">
-                                    <div class="flex items-start gap-md">
-                                        <div class="bg-surface-container p-sm rounded-xl">
-                                            <img alt="Java" class="w-8 h-8"
-                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcIhZ9okft1Ov5oNpHBZhGSs94vozP0IYFzcpMnQVl-ft8hWo-iWEPkPOGQaJB8z-l18_hoYpi9DhF2VbfIZQHRMiUiBtSKxmOsohW52wb2wJ8iP8rbRyXgzsgFFYk1ALJAajZmzIVaaa8HYu2m0NSrR3R7wf1FUxxdERrQzzLf5XjtB6F9l9ezC12MMk_vTZk0cU2mIeR_vSPawOItL447pcX_751WnOp6RoQ0HUzw3oVMi-nlPqjpisoS_0boZdwLbiAti-ZsvY" />
-                                        </div>
-                                        <div>
-                                            <p class="font-bold text-on-surface">Java 17 (LTS)</p>
-                                            <p class="font-body-sm text-on-surface-variant">Lenguaje base que permite la
-                                                portabilidad extrema y el uso de recolectores de basura avanzados para
-                                                la simulación.</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-start gap-md">
-                                        <div class="bg-surface-container p-sm rounded-xl text-secondary">
-                                            <span class="material-symbols-outlined text-3xl">extension</span>
-                                        </div>
-                                        <div>
-                                            <p class="font-bold text-on-surface">Arc Engine (fork de LibGDX)</p>
-                                            <p class="font-body-sm text-on-surface-variant">Núcleo gráfico personalizado
-                                                que abstrae SDL2 y OpenGL, diseñado específicamente para juegos de alto
-                                                rendimiento en grid.</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-start gap-md">
-                                        <div class="bg-surface-container p-sm rounded-xl">
-                                            <img alt="Gradle" class="w-8 h-8"
-                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuABi-HvgnMU4pxNVMKIWUzffbJQ8_vvCCRjT-VoTmoOBxPkQV0fqfCLsWn-Ed7dXj8FEE_5W3aFLZcJSuiWu1nUPh1XKrsD2RKE8NLH4ejDgX2AMzY2qWShtTX90FLFwAZIAeEq-26dbAfWdztu3n2auzpk1eO6RHx_ko8uPCX1fs_MMAvvVgurF_REQn64l1YzssMqi3_d-FGH9Vw2WKDFuDXJkSWoD4gLxD8j7H3xa03nu-bis22ThhDpX1kY7hBRHYsgxW_3NTc" />
-                                        </div>
-                                        <div>
-                                            <p class="font-bold text-on-surface">Gradle 8.x</p>
-                                            <p class="font-body-sm text-on-surface-variant">Sistema de automatización de
-                                                construcción que gestiona los complejos pipelines de compilación para
-                                                múltiples plataformas.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="bg-white border border-outline-variant rounded-2xl p-xl shadow-sm">
-                                <h3
-                                    class="font-headline-md text-headline-md text-on-surface mb-lg flex items-center gap-xs">
-                                    <span class="material-symbols-outlined text-secondary">view_quilt</span> Módulos
-                                    Críticos
-                                </h3>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
-                                    <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-md">
-                                        <div class="flex items-center gap-sm mb-xs">
-                                            <span class="material-symbols-outlined text-secondary">layers</span>
-                                            <span
-                                                class="font-code-sm text-code-sm font-bold text-on-surface uppercase">core</span>
-                                        </div>
-                                        <p class="text-[12px] text-on-surface-variant leading-tight">Lógica de
-                                            simulación, mundo e IA totalmente desacoplada de la interfaz.</p>
-                                    </div>
-                                    <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-md">
-                                        <div class="flex items-center gap-sm mb-xs">
-                                            <span
-                                                class="material-symbols-outlined text-secondary">desktop_windows</span>
-                                            <span
-                                                class="font-code-sm text-code-sm font-bold text-on-surface uppercase">desktop</span>
-                                        </div>
-                                        <p class="text-[12px] text-on-surface-variant leading-tight">Implementación
-                                            LWJGL3/SDL2 para ejecución nativa en PC.</p>
-                                    </div>
-                                    <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-md">
-                                        <div class="flex items-center gap-sm mb-xs">
-                                            <span class="material-symbols-outlined text-secondary">dns</span>
-                                            <span
-                                                class="font-code-sm text-code-sm font-bold text-on-surface uppercase">server</span>
-                                        </div>
-                                        <p class="text-[12px] text-on-surface-variant leading-tight">Módulo headless
-                                            optimizado para baja latencia en entornos competitivos.</p>
-                                    </div>
-                                    <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-md">
-                                        <div class="flex items-center gap-sm mb-xs">
-                                            <span class="material-symbols-outlined text-secondary">smartphone</span>
-                                            <span
-                                                class="font-code-sm text-code-sm font-bold text-on-surface uppercase">mobile</span>
-                                        </div>
-                                        <p class="text-[12px] text-on-surface-variant leading-tight">Adaptadores
-                                            táctiles y optimización para Android e iOS.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- Section: Product Backlog -->
-                <section class="slide-container bg-surface-container-low/50">
-                    <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
-                        <div class="border-b border-outline-variant pb-xs">
-                            <div class="flex items-center gap-sm mb-xs">
-                                <span class="material-symbols-outlined text-secondary">view_list</span>
-                                <h2 class="font-headline-lg text-headline-lg text-primary">Simulación de Proceso
-                                    (Product Backlog)</h2>
-                            </div>
-                            <p class="font-body-sm text-body-sm text-on-surface-variant">Desglose detallado de historias
-                                de usuario y tareas técnicas por fases de prioridad.</p>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-lg h-[500px]">
-                            <!-- MVP Column -->
-                            <div
-                                class="bg-white border border-outline-variant rounded-2xl shadow-md flex flex-col overflow-hidden">
-                                <div
-                                    class="bg-surface-container-low border-b border-outline-variant p-lg flex items-center justify-between">
-                                    <div class="flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-error">star</span>
-                                        <h3 class="font-headline-md text-headline-md text-on-surface">MVP</h3>
-                                    </div>
-                                    <span
-                                        class="bg-error-container text-on-error-container text-[11px] px-2 py-1 rounded-full font-bold uppercase tracking-tighter">Alta
-                                        Pri</span>
-                                </div>
-                                <div class="p-lg space-y-md overflow-y-auto hide-scrollbar flex-1">
-                                    <div class="bg-surface p-md border border-outline-variant/50 rounded-xl">
-                                        <span class="text-[11px] font-bold text-secondary uppercase block mb-1">Editor
-                                            (8 SP)</span>
-                                        <p class="text-[13px] text-on-surface leading-snug">Sistema de edición in-game
-                                            para creación y compartición de mapas.</p>
-                                    </div>
-                                    <div class="bg-surface p-md border border-outline-variant/50 rounded-xl">
-                                        <span class="text-[11px] font-bold text-secondary uppercase block mb-1">CD a
-                                            Staging</span>
-                                        <p class="text-[13px] text-on-surface leading-snug">Automatización de releases
-                                            (APK/JAR) desplegados en GitHub Pages.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Advanced Column -->
-                            <div
-                                class="bg-white border border-outline-variant rounded-2xl shadow-md flex flex-col overflow-hidden">
-                                <div
-                                    class="bg-surface-container-low border-b border-outline-variant p-lg flex items-center justify-between">
-                                    <div class="flex items-center gap-2">
-                                        <span
-                                            class="material-symbols-outlined text-surface-tint">settings_input_antenna</span>
-                                        <h3 class="font-headline-md text-headline-md text-on-surface">Avanzadas</h3>
-                                    </div>
-                                    <span
-                                        class="bg-surface-container text-on-surface-variant text-[11px] px-2 py-1 rounded-full font-bold uppercase tracking-tighter">Low
-                                        Pri</span>
-                                </div>
-                                <div class="p-lg space-y-md overflow-y-auto hide-scrollbar flex-1">
-                                    <div class="bg-surface p-md border border-outline-variant/50 rounded-xl">
-                                        <span class="text-[11px] font-bold text-secondary uppercase block mb-1">Online
-                                            (13 SP)</span>
-                                        <p class="text-[13px] text-on-surface leading-snug">Sincronización
-                                            cliente/servidor usando ArcNet y servidores dedicados.</p>
-                                    </div>
-                                    <div class="bg-surface p-md border border-outline-variant/50 rounded-xl">
-                                        <span class="text-[11px] font-bold text-secondary uppercase block mb-1">Modding
-                                            API (13 SP)</span>
-                                        <p class="text-[13px] text-on-surface leading-snug">Soporte para contenido
-                                            externo mediante scripts JS (Rhino Engine).</p>
-                                    </div>
-                                    <div class="bg-surface p-md border border-outline-variant/50 rounded-xl">
-                                        <span
-                                            class="text-[11px] font-bold text-secondary uppercase block mb-1">Ecosistema
-                                            (8 SP)</span>
-                                        <p class="text-[13px] text-on-surface leading-snug">Integración con Steam,
-                                            Discord Rich Presence y soporte para iOS.</p>
-                                    </div>
-                                    <div class="bg-surface p-md border border-outline-variant/50 rounded-xl">
-                                        <span class="text-[11px] font-bold text-secondary uppercase block mb-1">Quality
-                                            Ops</span>
-                                        <p class="text-[13px] text-on-surface leading-snug">Linting, análisis de
-                                            cobertura y reportes de calidad automáticos.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- Section: Future Development Plan -->
-                <section class="slide-container bg-surface-container-lowest">
-                    <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
-                        <div class="border-b border-outline-variant pb-xs">
-                            <div class="flex items-center gap-sm mb-xs">
-                                <span class="material-symbols-outlined text-secondary">calendar_month</span>
-                                <h2 class="font-headline-lg text-headline-lg text-primary">Posible Plan de Desarrollo
-                                </h2>
-                            </div>
-                            <p class="font-body-sm text-body-sm text-on-surface-variant">Cronograma estratégico basado
-                                en metodología Scrum + DevOps.</p>
-                        </div>
-                        <div class="bg-surface border border-outline-variant rounded-2xl overflow-hidden shadow-sm">
-                            <div class="overflow-x-auto hide-scrollbar">
-                                <table class="w-full text-left border-collapse">
-                                    <thead>
-                                        <tr
-                                            class="bg-surface-container-low border-b border-outline-variant text-[11px] font-bold uppercase text-on-surface-variant">
-                                            <th class="px-lg py-md">Sprint</th>
-                                            <th class="px-lg py-md">Hito / Etapa</th>
-                                            <th class="px-lg py-md">Foco del Desarrollo</th>
-                                            <th class="px-lg py-md">Práctica DevOps</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="divide-y divide-outline-variant/30">
-                                        <tr class="hover:bg-surface-container-low/50 transition-colors">
-                                            <td class="px-lg py-lg">
-                                                <p class="font-bold text-primary">Sprint 0</p>
-                                                <p class="text-[12px] text-on-surface-variant">Pre-desarrollo</p>
-                                            </td>
-                                            <td class="px-lg py-lg">
-                                                <span
-                                                    class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold border border-primary/20">HITO
-                                                    1 (15%)</span>
-                                            </td>
-                                            <td class="px-lg py-lg font-body-sm text-on-surface">
-                                                Configuración de repo, tablero Kanban y definición del Sprint Goal MVP.
-                                            </td>
-                                            <td class="px-lg py-lg font-code-sm text-[12px] text-secondary">
-                                                Staging en GitHub Pages
-                                            </td>
-                                        </tr>
-                                        <tr class="hover:bg-surface-container-low/50 transition-colors">
-                                            <td class="px-lg py-lg">
-                                                <p class="font-bold text-primary">Sprint 1</p>
-                                                <p class="text-[12px] text-on-surface-variant">15 días | 47 SP</p>
-                                            </td>
-                                            <td class="px-lg py-lg">
-                                                <span
-                                                    class="bg-secondary/10 text-secondary text-[10px] px-2 py-0.5 rounded-full font-bold border border-secondary/20 uppercase">Core
-                                                    MVP</span>
-                                            </td>
-                                            <td class="px-lg py-lg font-body-sm text-on-surface">
-                                                Core agnóstico, rendering base, launcher desktop y bucle de gameplay
-                                                funcional.
-                                            </td>
-                                            <td class="px-lg py-lg font-code-sm text-[12px] text-secondary">
-                                                CI Pipeline (GitHub Actions)
-                                            </td>
-                                        </tr>
-                                        <tr class="hover:bg-surface-container-low/50 transition-colors">
-                                            <td class="px-lg py-lg">
-                                                <p class="font-bold text-primary">Sprint 2</p>
-                                                <p class="text-[12px] text-on-surface-variant">15 días | 21 SP</p>
-                                            </td>
-                                            <td class="px-lg py-lg">
-                                                <span
-                                                    class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold border border-primary/20">HITO
-                                                    2 (60%)</span>
-                                            </td>
-                                            <td class="px-lg py-lg font-body-sm text-on-surface">
-                                                Port a Android, sistema de guardado LZ4 y editor de mapas integrado.
-                                            </td>
-                                            <td class="px-lg py-lg font-code-sm text-[12px] text-secondary">
-                                                CD a Staging (APK/JAR)
-                                            </td>
-                                        </tr>
-                                        <tr class="hover:bg-surface-container-low/50 transition-colors">
-                                            <td class="px-lg py-lg">
-                                                <p class="font-bold text-primary">Sprint 3</p>
-                                                <p class="text-[12px] text-on-surface-variant">15 días | 34 SP</p>
-                                            </td>
-                                            <td class="px-lg py-lg">
-                                                <span
-                                                    class="bg-secondary/10 text-secondary text-[10px] px-2 py-0.5 rounded-full font-bold border border-secondary/20 uppercase">Avanzado</span>
-                                            </td>
-                                            <td class="px-lg py-lg font-body-sm text-on-surface">
-                                                Multijugador ArcNet, soporte para Mods JS (Rhino) e integración
-                                                Steam/iOS.
-                                            </td>
-                                            <td class="px-lg py-lg font-code-sm text-[12px] text-secondary">
-                                                Análisis de Calidad (Lint/Coverage)
-                                            </td>
-                                        </tr>
-                                        <tr class="hover:bg-surface-container-low/50 transition-colors">
-                                            <td class="px-lg py-lg">
-                                                <p class="font-bold text-primary">Sprint 4</p>
-                                                <p class="text-[12px] text-on-surface-variant">Cierre</p>
-                                            </td>
-                                            <td class="px-lg py-lg">
-                                                <span
-                                                    class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold border border-primary/20">HITO
-                                                    3 (100%)</span>
-                                            </td>
-                                            <td class="px-lg py-lg font-body-sm text-on-surface">
-                                                Redacción de Artículo IEEE, documentación final y despliegue estable.
-                                            </td>
-                                            <td class="px-lg py-lg font-code-sm text-[12px] text-secondary">
-                                                CI/CD Completamente Maduro
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <!-- Content for Hito 2 -->
-            <div class="tab-content active" id="hito2" role="tabpanel">
-                <!-- Sprint 1 Header -->
-                <div
-                    class="bg-surface-container-lowest border-b border-outline-variant pt-xl pb-md sticky top-[136px] z-30">
-                    <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
-                        <h2 class="font-headline-xl text-headline-xl text-primary">Hito 2 - Implementación</h2>
-                        <p class="text-on-surface-variant mt-sm">Desarrollo iterativo, análisis de módulos core, y
-                            automatización CI/CD.</p>
+                    <div>
+                        <img src="./imgs/kanban_mindustry.png" class="w-full">
                     </div>
                 </div>
-                <!-- P1: Jack -->
+            </section>
+            <!-- Section: Team -->
+            <section class="slide-container bg-surface-container-lowest">
+                <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
+                    <div class="border-b border-outline-variant pb-xs">
+                        <div class="flex items-center gap-sm mb-xs">
+                            <span class="material-symbols-outlined text-secondary">groups</span>
+                            <h2 class="font-headline-lg text-headline-lg text-primary">Asignación de Equipo</h2>
+                        </div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant">Roles específicos y
+                            distribución de responsabilidades técnicas dentro del grupo.</p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-lg">
+                        <div
+                            class="bg-surface border border-outline-variant rounded-2xl p-lg flex flex-col gap-md shadow-sm hover:border-secondary/50 transition-all group">
+                            <div class="flex items-center gap-md">
+                                <div
+                                    class="bg-secondary/10 p-sm rounded-xl text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined text-[32px]">person</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-headline-md text-headline-md text-on-surface text-[18px]">
+                                        Rodrigo Layme</h3>
+                                    <p class="font-label-caps text-[11px] text-secondary tracking-widest uppercase">
+                                        Líder de Proyecto</p>
+                                </div>
+                            </div>
+                            <p
+                                class="font-body-sm text-body-sm text-on-surface-variant border-t border-outline-variant/30 pt-md">
+                                Responsable del despliegue en GitHub Pages, coordinación general y consistencia
+                                visual del portal.</p>
+                        </div>
+                        <div
+                            class="bg-surface border border-outline-variant rounded-2xl p-lg flex flex-col gap-md shadow-sm hover:border-secondary/50 transition-all group">
+                            <div class="flex items-center gap-md">
+                                <div
+                                    class="bg-secondary/10 p-sm rounded-xl text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined text-[32px]">assignment</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-headline-md text-headline-md text-on-surface text-[18px]">Karla
+                                        Bedregal</h3>
+                                    <p class="font-label-caps text-[11px] text-secondary tracking-widest uppercase">
+                                        Gestión de Issues</p>
+                                </div>
+                            </div>
+                            <p
+                                class="font-body-sm text-body-sm text-on-surface-variant border-t border-outline-variant/30 pt-md">
+                                Administración del backlog, etiquetado de historias de usuario y control de hitos en
+                                GitHub Projects.</p>
+                        </div>
+                        <div
+                            class="bg-surface border border-outline-variant rounded-2xl p-lg flex flex-col gap-md shadow-sm hover:border-secondary/50 transition-all group">
+                            <div class="flex items-center gap-md">
+                                <div
+                                    class="bg-secondary/10 p-sm rounded-xl text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined text-[32px]">history_edu</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-headline-md text-headline-md text-on-surface text-[18px]">
+                                        Joaquín Quispe</h3>
+                                    <p class="font-label-caps text-[11px] text-secondary tracking-widest uppercase">
+                                        Analista de Historial</p>
+                                </div>
+                            </div>
+                            <p
+                                class="font-body-sm text-body-sm text-on-surface-variant border-t border-outline-variant/30 pt-md">
+                                Extracción y documentación del historial Git para identificar patrones de desarrollo
+                                y hitos clave.</p>
+                        </div>
+                        <div
+                            class="bg-surface border border-outline-variant rounded-2xl p-lg flex flex-col gap-md shadow-sm hover:border-secondary/50 transition-all group">
+                            <div class="flex items-center gap-md">
+                                <div
+                                    class="bg-secondary/10 p-sm rounded-xl text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined text-[32px]">terminal</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-headline-md text-headline-md text-on-surface text-[18px]">Tania
+                                        Ayque</h3>
+                                    <p class="font-label-caps text-[11px] text-secondary tracking-widest uppercase">
+                                        Especialista Técnica</p>
+                                </div>
+                            </div>
+                            <p
+                                class="font-body-sm text-body-sm text-on-surface-variant border-t border-outline-variant/30 pt-md">
+                                Definición y análisis del stack tecnológico (Java, Arc, SDL2) y su integración en el
+                                flujo de desarrollo.</p>
+                        </div>
+                        <div
+                            class="bg-surface border border-outline-variant rounded-2xl p-lg flex flex-col gap-md shadow-sm hover:border-secondary/50 transition-all group">
+                            <div class="flex items-center gap-md">
+                                <div
+                                    class="bg-secondary/10 p-sm rounded-xl text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined text-[32px]">architecture</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-headline-md text-headline-md text-on-surface text-[18px]">Jack
+                                        Llaique</h3>
+                                    <p class="font-label-caps text-[11px] text-secondary tracking-widest uppercase">
+                                        Arquitecto Software</p>
+                                </div>
+                            </div>
+                            <p
+                                class="font-body-sm text-body-sm text-on-surface-variant border-t border-outline-variant/30 pt-md">
+                                Diseño de la estructura modular y supervisión de la coherencia técnica entre los 8
+                                módulos del proyecto.</p>
+                        </div>
+                        <div
+                            class="bg-surface border border-outline-variant rounded-2xl p-lg flex flex-col gap-md shadow-sm hover:border-secondary/50 transition-all group">
+                            <div class="flex items-center gap-md">
+                                <div
+                                    class="bg-secondary/10 p-sm rounded-xl text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined text-[32px]">event_repeat</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-headline-md text-headline-md text-on-surface text-[18px]">Sandra
+                                        Aliaga</h3>
+                                    <p class="font-label-caps text-[11px] text-secondary tracking-widest uppercase">
+                                        Planificadora Scrum</p>
+                                </div>
+                            </div>
+                            <p
+                                class="font-body-sm text-body-sm text-on-surface-variant border-t border-outline-variant/30 pt-md">
+                                Definición de ceremonias Scrum, cronograma de Sprints y métricas de velocidad del
+                                equipo.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Section: Git History -->
+            <section class="slide-container bg-surface-container-low/30">
+                <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
+                    <div class="border-b border-outline-variant pb-xs">
+                        <div class="flex items-center gap-sm mb-xs">
+                            <span class="material-symbols-outlined text-secondary">account_tree</span>
+                            <h2 class="font-headline-lg text-headline-lg text-primary">Análisis del Historial Git
+                            </h2>
+                        </div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant">Línea de tiempo detallada sobre
+                            la evolución del repositorio oficial.</p>
+                    </div>
+                    <div class="bg-white border border-outline-variant rounded-2xl p-xl shadow-sm">
+                        <div class="relative border-l-4 border-surface-container-high ml-4 space-y-12 py-4">
+                            <!-- Event 1 -->
+                            <div class="relative pl-10">
+                                <div
+                                    class="absolute -left-[14px] top-1 h-6 w-6 rounded-full bg-secondary border-4 border-white shadow-sm">
+                                </div>
+                                <div
+                                    class="bg-surface-container-low rounded-xl p-lg border border-outline-variant/50 max-w-3xl hover:shadow-md transition-shadow">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-code-sm text-code-sm font-bold text-secondary">Abril 2017
+                                            - Commit Inicial</span>
+                                        <span
+                                            class="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded-full font-bold">FOUNDATION</span>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                                        Creación oficial por Anuken. El primer commit ya presentaba una arquitectura
+                                        robusta incluyendo módulos de IA, entidades, mundo y el ejecutable desktop
+                                        inicial basado en el motor Arc (un fork avanzado de LibGDX).
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Event 2 -->
+                            <div class="relative pl-10">
+                                <div
+                                    class="absolute -left-[14px] top-1 h-6 w-6 rounded-full bg-surface-tint border-4 border-white shadow-sm">
+                                </div>
+                                <div
+                                    class="bg-surface-container-low rounded-xl p-lg border border-outline-variant/50 max-w-3xl hover:shadow-md transition-shadow">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-code-sm text-code-sm font-bold text-surface-tint">Agosto
+                                            2018 - Versión Alpha &amp; Mobile</span>
+                                        <span
+                                            class="text-[10px] bg-surface-tint/10 text-surface-tint px-2 py-0.5 rounded-full font-bold">EXPANSION</span>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                                        Estabilización de las mecánicas core de recolección y logística. Se
+                                        introdujo el soporte oficial para Android, demostrando la capacidad
+                                        multiplataforma real del motor Arc mediante una abstracción total de inputs.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Event 3 -->
+                            <div class="relative pl-10">
+                                <div
+                                    class="absolute -left-[14px] top-1 h-6 w-6 rounded-full bg-primary border-4 border-white shadow-sm">
+                                </div>
+                                <div
+                                    class="bg-surface-container-low rounded-xl p-lg border border-outline-variant/50 max-w-3xl hover:shadow-md transition-shadow">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-code-sm text-code-sm font-bold text-primary">Septiembre
+                                            2019 - v5 &amp; Steam Release</span>
+                                        <span
+                                            class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-bold">MATURITY</span>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                                        Lanzamiento en Steam con integración de multijugador robusto (ArcNet),
+                                        campañas mundiales y soporte para Mods vía Rhino JS. Este hito marcó la
+                                        transición de un proyecto indie a un ecosistema de software completo.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Section: Stack Technical -->
+            <section class="slide-container bg-surface-container-lowest">
+                <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
+                    <div class="border-b border-outline-variant pb-xs">
+                        <div class="flex items-center gap-sm mb-xs">
+                            <span class="material-symbols-outlined text-secondary">memory</span>
+                            <h2 class="font-headline-lg text-headline-lg text-primary">Análisis del Stack Técnico
+                            </h2>
+                        </div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant">Tecnologías y arquitectura de
+                            software empleadas en la solución.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
+                        <div class="bg-white border border-outline-variant rounded-2xl p-xl shadow-sm">
+                            <h3
+                                class="font-headline-md text-headline-md text-on-surface mb-lg flex items-center gap-xs">
+                                <span class="material-symbols-outlined text-secondary">terminal</span> Tecnologías
+                                Identificadas
+                            </h3>
+                            <div class="space-y-lg">
+                                <div class="flex items-start gap-md">
+                                    <div class="bg-surface-container p-sm rounded-xl">
+                                        <img alt="Java" class="w-8 h-8" src="./imgs/java.png" />
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-on-surface">Java 17 (LTS)</p>
+                                        <p class="font-body-sm text-on-surface-variant">Lenguaje base que permite la
+                                            portabilidad extrema y el uso de recolectores de basura avanzados para
+                                            la simulación.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-md">
+                                    <div class="bg-surface-container p-sm rounded-xl text-secondary">
+                                        <span class="material-symbols-outlined text-3xl">extension</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-on-surface">Arc Engine (fork de LibGDX)</p>
+                                        <p class="font-body-sm text-on-surface-variant">Núcleo gráfico personalizado
+                                            que abstrae SDL2 y OpenGL, diseñado específicamente para juegos de alto
+                                            rendimiento en grid.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-md">
+                                    <div class="bg-surface-container p-sm rounded-xl">
+                                        <img alt="Gradle" class="w-8 h-8" src="./imgs/gradle.png" />
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-on-surface">Gradle 8.x</p>
+                                        <p class="font-body-sm text-on-surface-variant">Sistema de automatización de
+                                            construcción que gestiona los complejos pipelines de compilación para
+                                            múltiples plataformas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white border border-outline-variant rounded-2xl p-xl shadow-sm">
+                            <h3
+                                class="font-headline-md text-headline-md text-on-surface mb-lg flex items-center gap-xs">
+                                <span class="material-symbols-outlined text-secondary">view_quilt</span> Módulos
+                                Críticos
+                            </h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+                                <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-md">
+                                    <div class="flex items-center gap-sm mb-xs">
+                                        <span class="material-symbols-outlined text-secondary">layers</span>
+                                        <span
+                                            class="font-code-sm text-code-sm font-bold text-on-surface uppercase">core</span>
+                                    </div>
+                                    <p class="text-[12px] text-on-surface-variant leading-tight">Lógica de
+                                        simulación, mundo e IA totalmente desacoplada de la interfaz.</p>
+                                </div>
+                                <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-md">
+                                    <div class="flex items-center gap-sm mb-xs">
+                                        <span class="material-symbols-outlined text-secondary">desktop_windows</span>
+                                        <span
+                                            class="font-code-sm text-code-sm font-bold text-on-surface uppercase">desktop</span>
+                                    </div>
+                                    <p class="text-[12px] text-on-surface-variant leading-tight">Implementación
+                                        LWJGL3/SDL2 para ejecución nativa en PC.</p>
+                                </div>
+                                <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-md">
+                                    <div class="flex items-center gap-sm mb-xs">
+                                        <span class="material-symbols-outlined text-secondary">dns</span>
+                                        <span
+                                            class="font-code-sm text-code-sm font-bold text-on-surface uppercase">server</span>
+                                    </div>
+                                    <p class="text-[12px] text-on-surface-variant leading-tight">Módulo headless
+                                        optimizado para baja latencia en entornos competitivos.</p>
+                                </div>
+                                <div class="bg-surface-variant/30 border border-outline-variant rounded-xl p-md">
+                                    <div class="flex items-center gap-sm mb-xs">
+                                        <span class="material-symbols-outlined text-secondary">smartphone</span>
+                                        <span
+                                            class="font-code-sm text-code-sm font-bold text-on-surface uppercase">mobile</span>
+                                    </div>
+                                    <p class="text-[12px] text-on-surface-variant leading-tight">Adaptadores
+                                        táctiles y optimización para Android e iOS.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Section: Product Backlog -->
+            <section class="slide-container bg-surface-container-low/50">
+                <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
+                    <div class="border-b border-outline-variant pb-xs">
+                        <div class="flex items-center gap-sm mb-xs">
+                            <span class="material-symbols-outlined text-secondary">view_list</span>
+                            <h2 class="font-headline-lg text-headline-lg text-primary">Simulación de Proceso
+                                (Product Backlog)</h2>
+                        </div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant">Desglose detallado de historias
+                            de usuario y tareas técnicas por fases de prioridad.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-lg h-[500px]">
+                        <!-- MVP Column -->
+                        <div
+                            class="bg-white border border-outline-variant rounded-2xl shadow-md flex flex-col overflow-hidden">
+                            <div
+                                class="bg-surface-container-low border-b border-outline-variant p-lg flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-error">star</span>
+                                    <h3 class="font-headline-md text-headline-md text-on-surface">MVP</h3>
+                                </div>
+                                <span
+                                    class="bg-error-container text-on-error-container text-[11px] px-2 py-1 rounded-full font-bold uppercase tracking-tighter">Alta
+                                    Pri</span>
+                            </div>
+                            <div class="p-lg space-y-md overflow-y-auto hide-scrollbar flex-1">
+                                <div class="bg-surface p-md border border-outline-variant/50 rounded-xl">
+                                    <span class="text-[11px] font-bold text-secondary uppercase block mb-1">Editor
+                                        (8 SP)</span>
+                                    <p class="text-[13px] text-on-surface leading-snug">Sistema de edición in-game
+                                        para creación y compartición de mapas.</p>
+                                </div>
+                                <div class="bg-surface p-md border border-outline-variant/50 rounded-xl">
+                                    <span class="text-[11px] font-bold text-secondary uppercase block mb-1">CD a
+                                        Staging</span>
+                                    <p class="text-[13px] text-on-surface leading-snug">Automatización de releases
+                                        (APK/JAR) desplegados en GitHub Pages.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Advanced Column -->
+                        <div
+                            class="bg-white border border-outline-variant rounded-2xl shadow-md flex flex-col overflow-hidden">
+                            <div
+                                class="bg-surface-container-low border-b border-outline-variant p-lg flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span
+                                        class="material-symbols-outlined text-surface-tint">settings_input_antenna</span>
+                                    <h3 class="font-headline-md text-headline-md text-on-surface">Avanzadas</h3>
+                                </div>
+                                <span
+                                    class="bg-surface-container text-on-surface-variant text-[11px] px-2 py-1 rounded-full font-bold uppercase tracking-tighter">Low
+                                    Pri</span>
+                            </div>
+                            <div class="p-lg space-y-md overflow-y-auto hide-scrollbar flex-1">
+                                <div class="bg-surface p-md border border-outline-variant/50 rounded-xl">
+                                    <span class="text-[11px] font-bold text-secondary uppercase block mb-1">Online
+                                        (13 SP)</span>
+                                    <p class="text-[13px] text-on-surface leading-snug">Sincronización
+                                        cliente/servidor usando ArcNet y servidores dedicados.</p>
+                                </div>
+                                <div class="bg-surface p-md border border-outline-variant/50 rounded-xl">
+                                    <span class="text-[11px] font-bold text-secondary uppercase block mb-1">Modding
+                                        API (13 SP)</span>
+                                    <p class="text-[13px] text-on-surface leading-snug">Soporte para contenido
+                                        externo mediante scripts JS (Rhino Engine).</p>
+                                </div>
+                                <div class="bg-surface p-md border border-outline-variant/50 rounded-xl">
+                                    <span class="text-[11px] font-bold text-secondary uppercase block mb-1">Ecosistema
+                                        (8 SP)</span>
+                                    <p class="text-[13px] text-on-surface leading-snug">Integración con Steam,
+                                        Discord Rich Presence y soporte para iOS.</p>
+                                </div>
+                                <div class="bg-surface p-md border border-outline-variant/50 rounded-xl">
+                                    <span class="text-[11px] font-bold text-secondary uppercase block mb-1">Quality
+                                        Ops</span>
+                                    <p class="text-[13px] text-on-surface leading-snug">Linting, análisis de
+                                        cobertura y reportes de calidad automáticos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Section: Future Development Plan -->
+            <section class="slide-container bg-surface-container-lowest">
+                <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
+                    <div class="border-b border-outline-variant pb-xs">
+                        <div class="flex items-center gap-sm mb-xs">
+                            <span class="material-symbols-outlined text-secondary">calendar_month</span>
+                            <h2 class="font-headline-lg text-headline-lg text-primary">Posible Plan de Desarrollo
+                            </h2>
+                        </div>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant">Cronograma estratégico basado
+                            en metodología Scrum + DevOps.</p>
+                    </div>
+                    <div class="bg-surface border border-outline-variant rounded-2xl overflow-hidden shadow-sm">
+                        <div class="overflow-x-auto hide-scrollbar">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr
+                                        class="bg-surface-container-low border-b border-outline-variant text-[11px] font-bold uppercase text-on-surface-variant">
+                                        <th class="px-lg py-md">Sprint</th>
+                                        <th class="px-lg py-md">Hito / Etapa</th>
+                                        <th class="px-lg py-md">Foco del Desarrollo</th>
+                                        <th class="px-lg py-md">Práctica DevOps</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-outline-variant/30">
+                                    <tr class="hover:bg-surface-container-low/50 transition-colors">
+                                        <td class="px-lg py-lg">
+                                            <p class="font-bold text-primary">Sprint 0</p>
+                                            <p class="text-[12px] text-on-surface-variant">Pre-desarrollo</p>
+                                        </td>
+                                        <td class="px-lg py-lg">
+                                            <span
+                                                class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold border border-primary/20">HITO
+                                                1 (15%)</span>
+                                        </td>
+                                        <td class="px-lg py-lg font-body-sm text-on-surface">
+                                            Configuración de repo, tablero Kanban y definición del Sprint Goal MVP.
+                                        </td>
+                                        <td class="px-lg py-lg font-code-sm text-[12px] text-secondary">
+                                            Staging en GitHub Pages
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-surface-container-low/50 transition-colors">
+                                        <td class="px-lg py-lg">
+                                            <p class="font-bold text-primary">Sprint 1</p>
+                                            <p class="text-[12px] text-on-surface-variant">15 días | 47 SP</p>
+                                        </td>
+                                        <td class="px-lg py-lg">
+                                            <span
+                                                class="bg-secondary/10 text-secondary text-[10px] px-2 py-0.5 rounded-full font-bold border border-secondary/20 uppercase">Core
+                                                MVP</span>
+                                        </td>
+                                        <td class="px-lg py-lg font-body-sm text-on-surface">
+                                            Core agnóstico, rendering base, launcher desktop y bucle de gameplay
+                                            funcional.
+                                        </td>
+                                        <td class="px-lg py-lg font-code-sm text-[12px] text-secondary">
+                                            CI Pipeline (GitHub Actions)
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-surface-container-low/50 transition-colors">
+                                        <td class="px-lg py-lg">
+                                            <p class="font-bold text-primary">Sprint 2</p>
+                                            <p class="text-[12px] text-on-surface-variant">15 días | 21 SP</p>
+                                        </td>
+                                        <td class="px-lg py-lg">
+                                            <span
+                                                class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold border border-primary/20">HITO
+                                                2 (60%)</span>
+                                        </td>
+                                        <td class="px-lg py-lg font-body-sm text-on-surface">
+                                            Port a Android, sistema de guardado LZ4 y editor de mapas integrado.
+                                        </td>
+                                        <td class="px-lg py-lg font-code-sm text-[12px] text-secondary">
+                                            CD a Staging (APK/JAR)
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-surface-container-low/50 transition-colors">
+                                        <td class="px-lg py-lg">
+                                            <p class="font-bold text-primary">Sprint 3</p>
+                                            <p class="text-[12px] text-on-surface-variant">15 días | 34 SP</p>
+                                        </td>
+                                        <td class="px-lg py-lg">
+                                            <span
+                                                class="bg-secondary/10 text-secondary text-[10px] px-2 py-0.5 rounded-full font-bold border border-secondary/20 uppercase">Avanzado</span>
+                                        </td>
+                                        <td class="px-lg py-lg font-body-sm text-on-surface">
+                                            Multijugador ArcNet, soporte para Mods JS (Rhino) e integración
+                                            Steam/iOS.
+                                        </td>
+                                        <td class="px-lg py-lg font-code-sm text-[12px] text-secondary">
+                                            Análisis de Calidad (Lint/Coverage)
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-surface-container-low/50 transition-colors">
+                                        <td class="px-lg py-lg">
+                                            <p class="font-bold text-primary">Sprint 4</p>
+                                            <p class="text-[12px] text-on-surface-variant">Cierre</p>
+                                        </td>
+                                        <td class="px-lg py-lg">
+                                            <span
+                                                class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold border border-primary/20">HITO
+                                                3 (100%)</span>
+                                        </td>
+                                        <td class="px-lg py-lg font-body-sm text-on-surface">
+                                            Redacción de Artículo IEEE, documentación final y despliegue estable.
+                                        </td>
+                                        <td class="px-lg py-lg font-code-sm text-[12px] text-secondary">
+                                            CI/CD Completamente Maduro
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Content for Hito 2 -->
+        <div class="tab-content active" id="hito2" role="tabpanel">
+            <!-- Sprint 1 Header -->
+            <div
+                class="bg-surface-container-lowest border-b border-outline-variant pt-xl pb-md sticky top-[136px] z-30">
+                <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+                    <h2 class="font-headline-xl text-headline-xl text-primary">Hito 2 - Implementación</h2>
+                    <p class="text-on-surface-variant mt-sm">Desarrollo iterativo, análisis de módulos core, y
+                        automatización CI/CD.</p>
+                </div>
+            </div>
+            <!-- P1: Jack -->
             <section class="slide-container bg-surface-container-low/30">
                 <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
                     <div class="border-b border-outline-variant pb-xs flex items-center gap-sm">
@@ -1065,27 +1035,27 @@
                                 <div class="col-span-2 md:col-span-2">
                                     <img alt="Fig 1: git log core"
                                         class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj9QDBe5whEMKpi-YWSBkDNQfZg-BbQtsQcRSMJ-FX7clS1rM-BjCmBLVCGX2tYC2D9zI8enpZ7WHt4V7CFdgn-wkBHaexAnYn9FKqbY7cJLiVaH-FciF8kE47dq6P63CXTtJjpThbGOIjhdmm-0IlXKx4VIhLnWp2dkf10cB-XB4phb1HPlB5YQ3MH5ZC5Ci_AC6g_3e_tXvrpAl_tNAglY_rn-pxAnHpv7Ncyb1NlGoTYWI0gy8l32YML45duwfpM7aDvoGuR7U" />
+                                        src="./imgs/fig01.png" />
                                 </div>
                                 <div>
                                     <img alt="Fig 2: first commit"
                                         class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-square md:aspect-auto"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG81cV44xCETu0oGhYZ07CETnHG2lJSBKV1rdoeHW0BP5zECmfFFnnbALKkMO_I92m4tl9oXefOxrrW2I_HMy0EfSilY9CSD-h8uTH-tsHQi7msu41nU0vsjsCo-0Zznjv7csLNjfQ7TBlKeRpEgQ_C-fQrNjM070WnY4D2j9t0_5Sh0_2saStAQ2ucYwGSGcVJkemj_eQI2t5GgOt3N3dEp-bqhzVS7XHW5cH2UKuMqMxLWwM9lPbRZz9tUa4_1FglGD4bw-52_0" />
+                                        src="./imgs/fig02.png" />
                                 </div>
                                 <div>
                                     <img alt="Fig 3: Moment.java"
                                         class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMA3xyHNAmU3YiVAx3erb_1rgdDivcKk9vXtho9DcdpOGDI0IIqzvjkYWZuar9z9-HSHYU43MarLHMFeMDyBm4OWodpFqEihg9cTL9b-mpzQgYg6HBHtgBCfZ0uwmZGfsvCDmv9bIjwMXaI-eRzNTLGmbeEyMqf5CCpeLVcSVA63J04M9AYBHGge9U_9GJu6ug3HAc3kWd7GGvDypd1mx0-zGzCLOK4NhhwS_vqP5tvWyp8NOvXQTd8_Y8xMteP9Y1tFzWnHSNFAM" />
+                                        src="./imgs/fig03.png" />
                                 </div>
                                 <div>
                                     <img alt="Fig 4: V8 Menu"
                                         class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO6nkw1p-tTmeiWiqIbVPq8cwzmbd6_imQRAJGkJwVVcMBG0w-PnX0EBG8rZ9a9Bu3IweDG_mdnooO_d6yciU_4dMnQoA-pZ7sSosDL7attN2gYdOJpEKTIiFFrghBhcupv3cYvp4-RLEA4lEoSLQKhz_dk2tGSb6wvAGiFZ0S2BHd8kgWs4fp1h9PtjbN4oZf08Vn7miuwLfHCapgSuDhp0hLjexh7IwRvK14OLimpUotMeBp848T61Nk8qUulZQlQQw9dmImloU" />
+                                        src="./imgs/fig04.png" />
                                 </div>
                                 <div>
                                     <img alt="Fig 5: V8 Gameplay"
                                         class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOFbdC-1Eq5DUb-Ar2DHGScxM3V5rjtbTGErqJgNdviWwIg1f0a0Rq1BF0D_fyXuVpe3_0NyzAy6f9SCMHGWdODoWUd9kH6Je1_8RxXDUFtPF9HPYQw__Bx4YIQz0tZqQayLP3Jmu3fQEpTvYiufo1ZdKQ4qOlYO60PTifEOfnafQSriHiNNyAvAWn0hSGbVX8MfDBZr1Mw7k42lMSzw6vJcwjiMwxt44QJsX5sJJmTudKuuCwEoTuSqii3GxUOAMitvPBLG8SQYY" />
+                                        src="./imgs/fig05.png" />
                                 </div>
                             </div>
                         </div>
@@ -1131,10 +1101,10 @@
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-sm">
                                 <img alt="Fig 6: module structure"
                                     class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAfrKDfjvNujkAipS4YGeF00pjIkwY4RM1XrDVJURokun5CKW7UHLwixIbJYixamEmrzpQuS-JNOpyUNehWWC4bYoOvsXKL0WRHrFCJ9xiFAsYYAge6VmZBidYWzQ3KjbdKNx5DRsg5brf3haqDzvQdbGAlRG0sY48XGu8JPm_rlqEH7D08NWt8zEd25Plvw9XWtebonWR70QP4YH-ZhjNXKmGsIICVtVi5I2bjkVlA10VzjBIKatcBWatPv4Q5tmNHXEJ-n1aBCw" />
+                                    src="./imgs/fig06.png" />
                                 <img alt="Fig 7: pathfinding file"
                                     class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8wg1IaRk5vhrJfx_25txQi4sJR7K3JBwstrXjfp-Y1aPneMt2Wp8iSY9nR0zCuCLxMpQG3FjTbtB53nTXkXSkoNiSg84SdJ9ARHsZllMUald0laHSz5fHEJrP_-nZdapqVGr0lh8-w3E5JL7L05P8spGWgAHhMujY6hYBarcK9qaySNj6uIgdXhfw173RkFPrLTMPi_fq87rNLCvgTTw3p0gUumphlt2ZElJ57jo0teLArJrZI3qxvQZP0Q3ODL1qmv1ULdIqKP8" />
+                                    src="./imgs/fig07.png" />
                                 <img alt="Fig 8: git log IA"
                                     class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr4LBxpQ26Ft1NuIEYEmp1Wu813d3zin3O-UyXFu7Io3RlayL7_wJrkXXCl680ghCVgwDcUt6K3OfkCmzcTKX1TMYkKS0ELeyKXv3BEkmsNlwhOaZwL3M9B-wMm-NxT2Bv4uR6iczG3tuzuqO0oZyisA4enIEbqAhDaLWwoVt3jcUoOymqYnYaDqyyD1S2oImulT06TQqrRRd8jNoH7atRFQXtl9H_ZyEBEjdvW6437nlVhij9-YvHE8_gfDNs0khHNBcZKikcp2s" />
@@ -1168,8 +1138,7 @@
                                     Infraestructura &amp; Retrospectiva
                                 </h3>
                                 <div class="mb-sm">
-                                    <img alt="CI Status" class="h-5"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcPqKH_VXDHuTvo_EhX-YveAVRpet9fmjxB1uz7ns0C8KCU73JYTvQtNfLFUzv_Ar3UY4c4P36RonoJBp8RA8Q52W0Qvp0D7X8TAFG0spVN_xH6cc8grI41f6AGlu4XX4LTzCrZU7vADtNs_hrfh6_dQuuffzQdb-Yz_S_zqQqKf7aypqUG4U70XkczH1kVHiYbfAyGQQLF7CbPeTdtmWP21m_aetQzHWnDqkEPX56cTVA6fSvRzln2rdvNrdaP7XG_PxMr7o7OKs" />
+                                    <!-- <img alt="CI Status" class="h-5" src="./imgs/fig08.png" /> -->
                                 </div>
                                 <div class="space-y-sm text-body-sm text-on-surface-variant leading-relaxed">
                                     <p>Implementación de pipeline automatizado para compilación en múltiples entornos
@@ -1186,22 +1155,22 @@
                             <div class="grid grid-cols-2 md:grid-cols-3 gap-sm">
                                 <img alt="Fig 9"
                                     class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMVfnfiaUhRvo9M2tk8iAR6PhOsNQQ1eo-0f0yPOQs7uq_eQNMq_J07Zi8xycAca15t4K8UhK_LgNp5jheuX_PQfpfjG26dlTc4xcWWV6B0KqCBMm6Up2Jdz24T6UyLxx6KlB-_-KdaAxIUCROMtnQjWEs3rxhv5he7HcxOXczRBjMfQLWKPNAISmK81R-65k61XFowhKeMY72Gh_CfruFrqFXFPnAXKTkrefdArAGzzs8WWGUNaZp8lNkUHAPyxSAIBYD18OThT4" />
+                                    src="./imgs/fig09.png" />
                                 <img alt="Fig 10"
                                     class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ7odon_ESFKZNcyTOpBxGDAakkBKL-5RvyTfNsxtspTA5FuPKWRp-wdJr8OEutslgSZkh4zz9jiHn62Z5UX7E_IaQ9QBZ1QIaOKdS7yEzQRz-Eiem-QlrMbC1l1_7f9Zoh8d4pm2hQHrA3ixtcIyu3YJGayJnzLejnKJ1JHkfzGdgnj-pHbrvk_FyiIps7SehsOkAvMhcDjUrtygGGKWDzP006O2zxvxiaOM7WuXGVfk5jSSVrXhS39E8-wM9olp_k05Xfq8PAz4" />
+                                    src="./imgs/fig10.png" />
                                 <img alt="Fig 11"
                                     class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEsM4fpQ6z3JSctt8So1FGF2Ns8-A_qd5AfvMgXKXKa2g6LuRh97DBM1Qxyut8kzEEujx8zCvgktDxO-XqKKn_8Olx_crxSpmQfX7LaZay1A3mnqi998GpCiJZzaJ9-U4KGOCXENDZNhXKATW8-4hzvzVj7yf9oKkgWTaCmtvbT-YioRS8p_xtNI6jh94zX5F1EQW6M7Skttmv3u9p_Uo-vMcr1qaVQsAW4nq-WzYqZnjCwrhzr3CbVy_DOMI9pJVHmR_hwH5eg1A" />
+                                    src="./imgs/fig11.png" />
                                 <img alt="Fig 12"
                                     class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTFXW0QaZGRFZMLhKMFjVvuAdh7IHkaFBsGLnNuZ0pF8lp0yaaVoBBI_eaVVKd87bJf5krzxH42qQF-VUge9Cho2AWCBJ8cJS_D5S4meip-jLMz7qdqMMU_er-OEFaRba0Sx6HpqpKn_5KZHrqWkBeL6JUgjKmiBVoRxRYddFDvhSqbwKeNdiQvk2P7UtpygzpSG5cFUIPe_sps8JK81KfCrBM7bALbvF1MBr-A3oaCzMxd3UW1wL-_sM5OrSvNxg-1_u7ggC0J7k" />
+                                    src="./imgs/fig12.png" />
                                 <img alt="Fig 13"
                                     class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlDbab0VNk9FnFiE5KFUNDBEoZSNEfxgW73Ev-e2f-UiKQqYxBl1HmcoTRZjX9A0nEl0P2IZOn5ST0iuZDAimuPlCN8H5BU8arjHS3IEJpmCM2mJoG53VnS5ZqKFglmZSaaMpIdYCWfLA_veHTl-pXzxuhZBjRIh2Kb5VLDrCDeIsCL78JWY-wVkhauIBFqbrMaDhTGDvANOHri0OuZKRL4R1Pu7T_OcQZBxmMQkWjHSOXkx6II0v_yI9J27_7ZGo40lsF6uGnEEo" />
+                                    src="./imgs/fig13.png" />
                                 <img alt="Fig 14"
                                     class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjVQA8bPgn7oWlibrT952BxzwQuiszTnVWJzruJ4vS_5DltJAubHgHUnU4waNSN3dv4LTlP-_OEQNsvoqff_wOEsp8E9CwWRhRpTwolyfXJzWxjy2VqHLzPZhBEfvM2GlMjAxKfoTkuc40AC2VsZXI1NK34Z91j89DL2jvsWe4tL7BkZSgDkSiaZbNbAbouI0UO5KbT9DsSeMjmk9fGPV4RCf5A59RpFVWQrbSHs5qX3BTZgURtUHpRSDGfD_27Dg8ym4x5Zr5rnQ" />
+                                    src="./imgs/fig14.png" />
                             </div>
                         </div>
                     </div>
@@ -1386,6 +1355,6 @@
             </div>
         </div>
     </main>
-</body>
+    </body>
 
 </html>
