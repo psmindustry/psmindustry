@@ -1015,61 +1015,68 @@
                         </button>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-[550px]">
-                        <!-- To Do -->
-                        <div
-                            class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm">
-                            <div
-                                class="border-b border-outline-variant p-4 flex items-center justify-between bg-surface-container-low">
+                    <div class="flex overflow-x-auto gap-4 h-[550px] pb-4 snap-x hide-scrollbar">
+                        
+                        <!-- Backlog -->
+                        <div class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm min-w-[280px] w-[280px] flex-shrink-0 snap-start">
+                            <div class="border-b border-outline-variant p-3 flex items-center justify-between bg-surface-container-low">
                                 <div class="flex items-center gap-2 text-on-surface">
-                                    <span class="material-symbols-outlined text-outline">radio_button_unchecked</span>
-                                    <h3 class="font-bold text-[16px]">To Do</h3>
+                                    <span class="material-symbols-outlined text-outline text-[18px]">radio_button_unchecked</span>
+                                    <h3 class="font-bold text-[14px]">Backlog</h3>
                                 </div>
-                                <span id="count-todo"
-                                    class="bg-surface-variant text-on-surface-variant text-[12px] px-2.5 py-0.5 rounded-full font-bold">0</span>
+                                <span id="count-backlog" class="bg-surface-variant text-on-surface-variant text-[11px] px-2 py-0.5 rounded-full font-bold">0</span>
                             </div>
-                            <div id="kanban-todo"
-                                class="p-4 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50">
-                                <div
-                                    class="animate-pulse flex space-x-2 items-center text-outline-variant text-sm justify-center py-4">
-                                    <span
-                                        class="material-symbols-outlined text-[16px] animate-spin">sync</span><span>Cargando...</span>
+                            <div id="kanban-backlog" class="p-3 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50">
+                                <div class="animate-pulse flex space-x-2 items-center text-outline-variant text-sm justify-center py-4"><span class="material-symbols-outlined text-[16px] animate-spin">sync</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Sprint Actual -->
+                        <div class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm min-w-[280px] w-[280px] flex-shrink-0 snap-start">
+                            <div class="border-b border-outline-variant p-3 flex items-center justify-between bg-surface-container-low">
+                                <div class="flex items-center gap-2 text-primary">
+                                    <span class="material-symbols-outlined text-[18px]">directions_run</span>
+                                    <h3 class="font-bold text-[14px]">Sprint Actual</h3>
                                 </div>
+                                <span id="count-sprint" class="bg-primary/10 text-primary text-[11px] px-2 py-0.5 rounded-full font-bold">0</span>
                             </div>
+                            <div id="kanban-sprint" class="p-3 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50"></div>
                         </div>
 
                         <!-- In Progress -->
-                        <div
-                            class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm">
-                            <div
-                                class="border-b border-outline-variant p-4 flex items-center justify-between bg-surface-container-low">
+                        <div class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm min-w-[280px] w-[280px] flex-shrink-0 snap-start">
+                            <div class="border-b border-outline-variant p-3 flex items-center justify-between bg-surface-container-low">
                                 <div class="flex items-center gap-2 text-secondary">
-                                    <span class="material-symbols-outlined">clock_loader_40</span>
-                                    <h3 class="font-bold text-[16px] text-on-surface">In Progress</h3>
+                                    <span class="material-symbols-outlined text-[18px]">clock_loader_40</span>
+                                    <h3 class="font-bold text-[14px]">In Progress</h3>
                                 </div>
-                                <span id="count-inprogress"
-                                    class="bg-secondary/10 text-secondary text-[12px] px-2.5 py-0.5 rounded-full font-bold">0</span>
+                                <span id="count-inprogress" class="bg-secondary/10 text-secondary text-[11px] px-2 py-0.5 rounded-full font-bold">0</span>
                             </div>
-                            <div id="kanban-inprogress"
-                                class="p-4 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50">
+                            <div id="kanban-inprogress" class="p-3 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50"></div>
+                        </div>
+
+                        <!-- In Review -->
+                        <div class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm min-w-[280px] w-[280px] flex-shrink-0 snap-start">
+                            <div class="border-b border-outline-variant p-3 flex items-center justify-between bg-surface-container-low">
+                                <div class="flex items-center gap-2 text-[#bb9af7]">
+                                    <span class="material-symbols-outlined text-[18px]">rate_review</span>
+                                    <h3 class="font-bold text-[14px] text-on-surface">In Review</h3>
+                                </div>
+                                <span id="count-review" class="bg-[#bb9af7]/10 text-[#bb9af7] text-[11px] px-2 py-0.5 rounded-full font-bold">0</span>
                             </div>
+                            <div id="kanban-review" class="p-3 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50"></div>
                         </div>
 
                         <!-- Done -->
-                        <div
-                            class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm">
-                            <div
-                                class="border-b border-outline-variant p-4 flex items-center justify-between bg-surface-container-low">
+                        <div class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm min-w-[280px] w-[280px] flex-shrink-0 snap-start">
+                            <div class="border-b border-outline-variant p-3 flex items-center justify-between bg-surface-container-low">
                                 <div class="flex items-center gap-2 text-[#9ece6a]">
-                                    <span class="material-symbols-outlined">check_circle</span>
-                                    <h3 class="font-bold text-[16px] text-on-surface">Done</h3>
+                                    <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                                    <h3 class="font-bold text-[14px] text-on-surface">Done</h3>
                                 </div>
-                                <span id="count-done"
-                                    class="bg-[#9ece6a]/10 text-[#9ece6a] text-[12px] px-2.5 py-0.5 rounded-full font-bold">0</span>
+                                <span id="count-done" class="bg-[#9ece6a]/10 text-[#9ece6a] text-[11px] px-2 py-0.5 rounded-full font-bold">0</span>
                             </div>
-                            <div id="kanban-done"
-                                class="p-4 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50">
-                            </div>
+                            <div id="kanban-done" class="p-3 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50"></div>
                         </div>
                     </div>
                 </div>
@@ -1571,11 +1578,15 @@
 
         // --- Live GitHub Kanban Script ---
         async function fetchGitHubKanban() {
-            const todoContainer = document.getElementById('kanban-todo');
-            const inprogressContainer = document.getElementById('kanban-inprogress');
-            const doneContainer = document.getElementById('kanban-done');
-
-            if (!todoContainer) return;
+            const cols = {
+                backlog: document.getElementById('kanban-backlog'),
+                sprint: document.getElementById('kanban-sprint'),
+                inprogress: document.getElementById('kanban-inprogress'),
+                review: document.getElementById('kanban-review'),
+                done: document.getElementById('kanban-done')
+            };
+            
+            if (!cols.backlog) return;
 
             const iconSync = document.querySelector('#refresh-kanban-btn .material-symbols-outlined');
             if (iconSync) iconSync.classList.add('animate-spin');
@@ -1587,36 +1598,39 @@
                 });
 
                 if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
-
+                
                 const issues = await response.json();
-
-                todoContainer.innerHTML = '';
-                inprogressContainer.innerHTML = '';
-                doneContainer.innerHTML = '';
-
-                let countTodo = 0, countInProgress = 0, countDone = 0;
+                
+                Object.values(cols).forEach(c => c.innerHTML = '');
+                
+                let counts = { backlog: 0, sprint: 0, inprogress: 0, review: 0, done: 0 };
 
                 issues.forEach(issue => {
-                    // Skip pull requests
-                    if (issue.pull_request) return;
-
-                    let status = 'todo';
+                    let status = 'backlog';
+                    
                     if (issue.state === 'closed') {
                         status = 'done';
-                        countDone++;
+                    } else if (issue.pull_request) {
+                        status = 'review';
                     } else if (issue.assignees && issue.assignees.length > 0) {
                         status = 'inprogress';
-                        countInProgress++;
                     } else {
-                        status = 'todo';
-                        countTodo++;
+                        status = 'backlog';
                     }
+                    
+                    // Allow label override
+                    const hasSprintLabel = issue.labels.some(l => l.name.toLowerCase().includes('sprint') || l.name.toLowerCase().includes('scrum'));
+                    if (status === 'backlog' && hasSprintLabel) {
+                        status = 'sprint';
+                    }
+
+                    counts[status]++;
 
                     const labelsHtml = issue.labels.map(l => `<span class="px-2 py-0.5 rounded-full text-[10px] font-bold whitespace-nowrap" style="background-color: #${l.color}20; color: #${l.color}; border: 1px solid #${l.color}40">${l.name}</span>`).join('');
                     const assigneesHtml = issue.assignees.map(a => `<img src="${a.avatar_url}" class="w-6 h-6 rounded-full border-2 border-surface -ml-2 first:ml-0" title="${a.login}">`).join('');
 
                     const issueCard = document.createElement('div');
-                    issueCard.className = 'bg-surface-container-lowest p-3.5 border border-outline-variant/50 rounded-xl shadow-sm hover:shadow-md hover:border-primary/50 transition-all cursor-pointer flex flex-col gap-2 group';
+                    issueCard.className = 'bg-surface-container-lowest p-3.5 border border-outline-variant/50 rounded-xl shadow-sm hover:shadow-md hover:border-primary/50 transition-all cursor-pointer flex flex-col gap-2 group snap-start';
                     issueCard.onclick = () => window.open(issue.html_url, '_blank');
                     issueCard.innerHTML = `
                         <div class="flex justify-between items-start gap-2">
@@ -1633,22 +1647,26 @@
                         </div>
                     `;
 
-                    if (status === 'todo') todoContainer.appendChild(issueCard);
-                    else if (status === 'inprogress') inprogressContainer.appendChild(issueCard);
-                    else doneContainer.appendChild(issueCard);
+                    cols[status].appendChild(issueCard);
                 });
 
-                document.getElementById('count-todo').textContent = countTodo;
-                document.getElementById('count-inprogress').textContent = countInProgress;
-                document.getElementById('count-done').textContent = countDone;
+                document.getElementById('count-backlog').textContent = counts.backlog;
+                document.getElementById('count-sprint').textContent = counts.sprint;
+                document.getElementById('count-inprogress').textContent = counts.inprogress;
+                document.getElementById('count-review').textContent = counts.review;
+                document.getElementById('count-done').textContent = counts.done;
 
-                if (countTodo === 0) todoContainer.innerHTML = '<div class="text-center text-outline-variant text-xs py-6 flex flex-col items-center gap-2"><span class="material-symbols-outlined text-[24px]">task</span>No hay tareas pendientes</div>';
-                if (countInProgress === 0) inprogressContainer.innerHTML = '<div class="text-center text-outline-variant text-xs py-6 flex flex-col items-center gap-2"><span class="material-symbols-outlined text-[24px]">pending_actions</span>No hay tareas en progreso</div>';
-                if (countDone === 0) doneContainer.innerHTML = '<div class="text-center text-outline-variant text-xs py-6 flex flex-col items-center gap-2"><span class="material-symbols-outlined text-[24px]">task_alt</span>No hay tareas completadas</div>';
+                const emptyMsg = (icon, text) => `<div class="text-center text-outline-variant text-xs py-6 flex flex-col items-center gap-2"><span class="material-symbols-outlined text-[24px]">${icon}</span>${text}</div>`;
+                
+                if (counts.backlog === 0) cols.backlog.innerHTML = emptyMsg('inventory_2', 'No hay tareas');
+                if (counts.sprint === 0) cols.sprint.innerHTML = emptyMsg('directions_run', 'No hay tareas activas');
+                if (counts.inprogress === 0) cols.inprogress.innerHTML = emptyMsg('pending_actions', 'Nada en progreso');
+                if (counts.review === 0) cols.review.innerHTML = emptyMsg('rate_review', 'Nada en revisión');
+                if (counts.done === 0) cols.done.innerHTML = emptyMsg('task_alt', 'Sin completados');
 
             } catch (error) {
                 console.error('Error fetching Kanban:', error);
-                todoContainer.innerHTML = `<div class="text-error text-xs p-2 flex items-center gap-2"><span class="material-symbols-outlined">error</span>Error cargando tablero</div>`;
+                cols.backlog.innerHTML = `<div class="text-error text-xs p-2 flex items-center gap-2"><span class="material-symbols-outlined">error</span>Error cargando tablero</div>`;
             } finally {
                 if (iconSync) iconSync.classList.remove('animate-spin');
             }
