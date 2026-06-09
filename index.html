@@ -996,59 +996,79 @@
             <!-- Live GitHub Kanban Board -->
             <section class="slide-container bg-surface-container-lowest py-xl">
                 <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
-                    <div class="border-b border-outline-variant pb-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div
+                        class="border-b border-outline-variant pb-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div class="flex items-center gap-sm">
-                            <div class="w-12 h-12 rounded-2xl bg-secondary text-white flex items-center justify-center font-bold shadow-md">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-secondary text-white flex items-center justify-center font-bold shadow-md">
                                 <span class="material-symbols-outlined text-[24px]">view_kanban</span>
                             </div>
                             <div>
                                 <h2 class="font-headline-lg text-headline-lg text-primary">Tablero Kanban en Vivo</h2>
-                                <p class="font-body-sm text-body-sm text-on-surface-variant">Sincronizado en tiempo real con las Issues del repositorio sandra-aliaga/Mindustry.</p>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Sincronizado en tiempo real
+                                    con las Issues del repositorio sandra-aliaga/Mindustry.</p>
                             </div>
                         </div>
-                        <button id="refresh-kanban-btn" class="flex items-center justify-center gap-2 px-4 py-2 bg-surface-container border border-outline-variant rounded-xl hover:bg-surface-variant transition-colors text-sm font-bold text-on-surface">
+                        <button id="refresh-kanban-btn"
+                            class="flex items-center justify-center gap-2 px-4 py-2 bg-surface-container border border-outline-variant rounded-xl hover:bg-surface-variant transition-colors text-sm font-bold text-on-surface">
                             <span class="material-symbols-outlined text-[18px]">sync</span> Actualizar Tablero
                         </button>
                     </div>
-                    
+
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-[550px]">
                         <!-- To Do -->
-                        <div class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm">
-                            <div class="border-b border-outline-variant p-4 flex items-center justify-between bg-surface-container-low">
+                        <div
+                            class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm">
+                            <div
+                                class="border-b border-outline-variant p-4 flex items-center justify-between bg-surface-container-low">
                                 <div class="flex items-center gap-2 text-on-surface">
                                     <span class="material-symbols-outlined text-outline">radio_button_unchecked</span>
                                     <h3 class="font-bold text-[16px]">To Do</h3>
                                 </div>
-                                <span id="count-todo" class="bg-surface-variant text-on-surface-variant text-[12px] px-2.5 py-0.5 rounded-full font-bold">0</span>
+                                <span id="count-todo"
+                                    class="bg-surface-variant text-on-surface-variant text-[12px] px-2.5 py-0.5 rounded-full font-bold">0</span>
                             </div>
-                            <div id="kanban-todo" class="p-4 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50">
-                                <div class="animate-pulse flex space-x-2 items-center text-outline-variant text-sm justify-center py-4"><span class="material-symbols-outlined text-[16px] animate-spin">sync</span><span>Cargando...</span></div>
+                            <div id="kanban-todo"
+                                class="p-4 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50">
+                                <div
+                                    class="animate-pulse flex space-x-2 items-center text-outline-variant text-sm justify-center py-4">
+                                    <span
+                                        class="material-symbols-outlined text-[16px] animate-spin">sync</span><span>Cargando...</span>
+                                </div>
                             </div>
                         </div>
 
                         <!-- In Progress -->
-                        <div class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm">
-                            <div class="border-b border-outline-variant p-4 flex items-center justify-between bg-surface-container-low">
+                        <div
+                            class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm">
+                            <div
+                                class="border-b border-outline-variant p-4 flex items-center justify-between bg-surface-container-low">
                                 <div class="flex items-center gap-2 text-secondary">
                                     <span class="material-symbols-outlined">clock_loader_40</span>
                                     <h3 class="font-bold text-[16px] text-on-surface">In Progress</h3>
                                 </div>
-                                <span id="count-inprogress" class="bg-secondary/10 text-secondary text-[12px] px-2.5 py-0.5 rounded-full font-bold">0</span>
+                                <span id="count-inprogress"
+                                    class="bg-secondary/10 text-secondary text-[12px] px-2.5 py-0.5 rounded-full font-bold">0</span>
                             </div>
-                            <div id="kanban-inprogress" class="p-4 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50">
+                            <div id="kanban-inprogress"
+                                class="p-4 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50">
                             </div>
                         </div>
 
                         <!-- Done -->
-                        <div class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm">
-                            <div class="border-b border-outline-variant p-4 flex items-center justify-between bg-surface-container-low">
+                        <div
+                            class="bg-surface-container border border-outline-variant rounded-2xl flex flex-col overflow-hidden shadow-sm">
+                            <div
+                                class="border-b border-outline-variant p-4 flex items-center justify-between bg-surface-container-low">
                                 <div class="flex items-center gap-2 text-[#9ece6a]">
                                     <span class="material-symbols-outlined">check_circle</span>
                                     <h3 class="font-bold text-[16px] text-on-surface">Done</h3>
                                 </div>
-                                <span id="count-done" class="bg-[#9ece6a]/10 text-[#9ece6a] text-[12px] px-2.5 py-0.5 rounded-full font-bold">0</span>
+                                <span id="count-done"
+                                    class="bg-[#9ece6a]/10 text-[#9ece6a] text-[12px] px-2.5 py-0.5 rounded-full font-bold">0</span>
                             </div>
-                            <div id="kanban-done" class="p-4 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50">
+                            <div id="kanban-done"
+                                class="p-4 space-y-3 overflow-y-auto hide-scrollbar flex-1 bg-surface-container-lowest/50">
                             </div>
                         </div>
                     </div>
@@ -1337,22 +1357,22 @@
                                 <div class="col-span-2 md:col-span-1">
                                     <img alt="Fig 20"
                                         class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video md:aspect-square"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5DJdsFgWe-vGMUHKQkQBSQCN2amXyPGWTxPk94Lza5Ms8CKK8B-e0ynMbba3o_3Hh3KeVwfK7W-LSveh1rtFR6QCsgi3c4m1FsHYHAXj-X93-E5ePRHcyNsG0nObCEAFoqJQqR3ecfTDdfMNoeJkHCU1TARyBSBJqsiKYun8kCkMx6I2XrrNWS2kBHXU39HyV0_cb5yzg5AeYZ9yOLdZD824-vN0VtrnhhMhUOOigdzspOknIhbFgeEn5N_XbrWrgV9fgYQ9clX0" />
+                                        src="./imgs/fig20.png" />
                                 </div>
                                 <div class="col-span-2 md:col-span-2">
                                     <img alt="Fig 21"
                                         class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpsMPPdwXKvrqMwe3Nr71snLeirAZG_zND8jPj-MynrDs9OTmvd8jsxQ3O9gAL9JnTrwnP0PkxBNJ9CLVFZ1eQT6pCNvc6mNHjAcJdN-z4jMkeruSWXq2tWLxy26GI1xM8eI6Ogjdg7gsyp9rLbS6P_SkA1vz_Nuc923N8kq0XoAv26QTq9sCL_bThgQAPAUH6BpADjvWaZXH6fWXH3ou5Sfl-3AyYFYnXWw5__MXcValLqMbx5Pn0uUwjj3hyzpPi1AYG3_9oIIc" />
+                                        src="./imgs/fig21.png" />
                                 </div>
                                 <img alt="Fig 22"
                                     class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtwQphDBZ_D933cSJcP5bwXUGKJKDx3IDpNCUWG7bIYFcUwBp4UNprwdFtCJmddSYUEU67uVIGt_QY2L4qTqocjwOH6pYfOWyIIqxNTBn3l4iJdmEVqqq7eFB0Tclwgi1N0XvTnuw1_GXQzz_ujsbPy3wRFEFk4SpbaHZnlXgWlz73sORWIy3Weh2oILetT2fSnONO1apEzLwivK6tPAg68lKt0RNe8fY0dcrD0BoSlvN49X4GC5pH-yRpeVFnTa3vwzXGWx2nDSk" />
                                 <img alt="Fig 23"
                                     class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGlDCZ08-R9fJQwsG2Ukvbnd5wUHmYkGa7UYusLNdyAzmwddLE2TpvPkVbK1xF0lGrm701KNFqmw9m3ksDuZY9gyvMBDeBK4gH63JZVlrTsEkCnyu-MEC1jj3enqDpKWeqfcPTNG0wrdD6-NefXH28ojknygO7rg8mP6lrtrVb23tYiI8kjHdhFvh2mqY0dg0TxL6w1Xu9fQZ4MoKjFFZv3QpJFvbcRzb0Sz9qFQHf_O_jpLHQo1YV6caQ5CuRRR0Mrq3aF_n6hHU" />
+                                    src="./imgs/fig23.png" />
                                 <img alt="Fig 24"
                                     class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2IATu7wWCa_zIBi-wrBOSc4Mro1TtDWGyU9kjNqY0EfOqjx_ZFKhKnK40RJ3yeogsNkTwk9bN-WRfzE9CnUTrHEybevlAfZ5eckkCt2W9kNN6JFHmC5OXsN7WFluYQrFBdRAIVLwbtH0QBygItjIbMp_3GGL_hb680ros5w-MOX6Tt3RUraz5OgD4Enmo88aQDd9o4WF7n5G15LVkloO_y3rNJKHqRi6bfyKmpIfZbe63EAmSnMGbShPqPFrA5VUSwuH2LYtm0Wk" />
+                                    src="./imgs/fig24.png" />
                             </div>
                         </div>
                     </div>
@@ -1396,10 +1416,10 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
                                 <img alt="Fig 25"
                                     class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYBet1SCYISkHmEfB2hiVxJh1BJNdcZoxIm8nKtuUNv4gx043rk9otSnF7ettCwqoEeoAKpIIS2VVuXQy0e5c_mS2lE3hkmvKEsthzqArWLRf69QMSMCF9GG_9sN8JAJhPN6SmmHywhD5aAOyMSe0uD3kUN5lOd5SDnYpgWDru_tra3xdtIWKEe5tnGttrlI8zTpbExzB-JJEbH-ZcI7_AUfjX7OdgB6AtvIbFUJKtotQ2357bc4DQeJKav9Kmd32GqTE22rjQYIk" />
+                                    src="./imgs/fig25.png" />
                                 <img alt="Fig 26"
                                     class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpWb-SAS6pQrzevp3RlFu9tZjAqG2O2DB0rs0DR-ldXobrNpyqu2xsZrhR7auiwEK6hFcWEfVZfhvN1v3QWpmSJQyrQDC9Cavn5L0XnQuPAphZY1WzGI7S5taxi0m7XicKKuGG8sb1G_jvOlSRW1MZUSUdX7jEimEgtk_6xO7Fw5DcMesxZWH-n6ABcDOk-iAwM4_rRbKyfSx0pINBFC2G6523I6h_KDPzBwbvNln4b1NVzCyn9BpeRoBNDsa7y0q6v_j1um9fCTU" />
+                                    src="./imgs/fig26.png" />
                             </div>
                         </div>
                     </div>
@@ -1599,7 +1619,7 @@
             const todoContainer = document.getElementById('kanban-todo');
             const inprogressContainer = document.getElementById('kanban-inprogress');
             const doneContainer = document.getElementById('kanban-done');
-            
+
             if (!todoContainer) return;
 
             const iconSync = document.querySelector('#refresh-kanban-btn .material-symbols-outlined');
@@ -1612,13 +1632,13 @@
                 });
 
                 if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
-                
+
                 const issues = await response.json();
-                
+
                 todoContainer.innerHTML = '';
                 inprogressContainer.innerHTML = '';
                 doneContainer.innerHTML = '';
-                
+
                 let countTodo = 0, countInProgress = 0, countDone = 0;
 
                 issues.forEach(issue => {
@@ -1667,9 +1687,9 @@
                 document.getElementById('count-inprogress').textContent = countInProgress;
                 document.getElementById('count-done').textContent = countDone;
 
-                if(countTodo === 0) todoContainer.innerHTML = '<div class="text-center text-outline-variant text-xs py-6 flex flex-col items-center gap-2"><span class="material-symbols-outlined text-[24px]">task</span>No hay tareas pendientes</div>';
-                if(countInProgress === 0) inprogressContainer.innerHTML = '<div class="text-center text-outline-variant text-xs py-6 flex flex-col items-center gap-2"><span class="material-symbols-outlined text-[24px]">pending_actions</span>No hay tareas en progreso</div>';
-                if(countDone === 0) doneContainer.innerHTML = '<div class="text-center text-outline-variant text-xs py-6 flex flex-col items-center gap-2"><span class="material-symbols-outlined text-[24px]">task_alt</span>No hay tareas completadas</div>';
+                if (countTodo === 0) todoContainer.innerHTML = '<div class="text-center text-outline-variant text-xs py-6 flex flex-col items-center gap-2"><span class="material-symbols-outlined text-[24px]">task</span>No hay tareas pendientes</div>';
+                if (countInProgress === 0) inprogressContainer.innerHTML = '<div class="text-center text-outline-variant text-xs py-6 flex flex-col items-center gap-2"><span class="material-symbols-outlined text-[24px]">pending_actions</span>No hay tareas en progreso</div>';
+                if (countDone === 0) doneContainer.innerHTML = '<div class="text-center text-outline-variant text-xs py-6 flex flex-col items-center gap-2"><span class="material-symbols-outlined text-[24px]">task_alt</span>No hay tareas completadas</div>';
 
             } catch (error) {
                 console.error('Error fetching Kanban:', error);
