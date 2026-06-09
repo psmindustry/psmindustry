@@ -1102,7 +1102,7 @@
                                     Tareas Asignadas
                                 </h3>
                                 <div class="space-y-sm text-body-sm text-on-surface-variant leading-relaxed">
-                                    <p>Explorar el árbol de git de los módulos core, graphics y arc-core. Hacer checkout al primer commit y tomar capturas de la estructura de directorios y del archivo principal del core. Tomar el git log del período. Redactar tabla de commits clave y análisis de decisiones técnicas (3 párrafos). Ejecutar Mindustry V8 y tomar 2 capturas del juego corriendo (menú y gameplay). Total: 5 capturas + redacción de análisis.</p>
+                                    <p>Análisis del árbol Git de los módulos core, graphics y arc-core. Captura de estructura, git log, y redacción de análisis de decisiones técnicas. Ejecución de Mindustry V8 con capturas de menú y gameplay.</p>
                                 </div>
                             </div>
                         </div>
@@ -1161,7 +1161,7 @@
                                     Tareas Asignadas
                                 </h3>
                                 <div class="space-y-sm text-body-sm text-on-surface-variant leading-relaxed">
-                                    <p>Explorar el árbol de git de world, content, ai y desktop. Hacer checkout al commit donde se introdujo la lógica de IA y tomar capturas de la estructura del módulo y del archivo de pathfinding. Tomar el git log del período. Redactar tabla de commits clave y análisis de decisiones técnicas (3 párrafos). Total: 3 capturas + redacción de análisis.</p>
+                                    <p>Exploración del árbol Git de world, content, ai y desktop. Análisis del commit de introducción de la lógica IA y pathfinding. Redacción de análisis de decisiones técnicas.</p>
                                 </div>
                             </div>
                         </div>
@@ -1207,8 +1207,8 @@
                                 <div class="mb-sm">
                                 </div>
                                 <div class="space-y-sm text-body-sm text-on-surface-variant leading-relaxed">
-                                    <p><strong>Como CI:</strong> configurar el archivo .github/workflows/ci.yml en el fork con trigger en push a main, setup JDK 17, caché Gradle, step de build y step de test. Hacer un cambio mínimo en el repo (por ejemplo actualizar la versión en gradle.properties) para disparar el workflow y demostrar que funciona end-to-end. Tomar 4 capturas: listado de runs en la pestaña Actions, detalle de los steps del run, logs de compilación/tests, y el badge en el README.</p>
-                                    <p><strong>Como Jefe Sprint 1:</strong> verificar que P1 y P2 entregaron sus partes. Tomar 2 capturas del kanban (historias en Done al cierre) y de los Issues cerrados. Redactar la retrospectiva del Sprint 1 (2-3 párrafos). Total: 6 capturas + ci.yml + redacción de retrospectiva.</p>
+                                    <p><strong>Como CI:</strong> Configuración del flujo de integración continua (ci.yml) con validación de build y tests end-to-end.</p>
+                                    <p><strong>Como Jefe Sprint 1:</strong> Verificación de entregables de P1 y P2, análisis del Kanban y redacción de la retrospectiva del Sprint 1.</p>
                                 </div>
                             </div>
                         </div>
@@ -1260,7 +1260,7 @@
                                     Tareas Asignadas
                                 </h3>
                                 <div class="space-y-sm text-body-sm text-on-surface-variant leading-relaxed">
-                                    <p>Explorar el árbol de git de android, input, io, editor y maps. Hacer checkout a tres commits distintos: el de introducción de Android (jun 2017), el del módulo io (ago 2017) y el del editor (dic 2017), tomando capturas de la estructura de directorios y de archivos clave en cada uno. Tomar el git log del período completo. Redactar tabla de commits clave y análisis de decisiones técnicas (4 párrafos). Total: 5 capturas + redacción de análisis.</p>
+                                    <p>Exploración de los módulos de Android, guardado y editor. Análisis histórico de commits clave (2017) y redacción de decisiones técnicas sobre la arquitectura móvil y persistencia.</p>
                                 </div>
                             </div>
                         </div>
@@ -1312,8 +1312,8 @@
                                     Tareas Asignadas
                                 </h3>
                                 <div class="space-y-sm text-body-sm text-on-surface-variant leading-relaxed">
-                                    <p><strong>Como CD:</strong> extender el pipeline con .github/workflows/cd.yml. El workflow debe dispararse en cada merge a main y hacer dos cosas: generar un release automático en GitHub con el JAR compilado adjunto como asset descargable, y desplegar el sitio de GitHub Pages actualizando el branch gh-pages. Para el release puede usarse actions/create-release o la GitHub CLI (gh release create). Coordinar con P6 para que el path de deploy apunte al directorio correcto del HTML del sitio. Hacer un merge de demostración para disparar el workflow end-to-end. Tomar 3 capturas: pestaña Actions con cd.yml exitoso, detalle de los steps del run de CD, y la sección Releases del repo mostrando el release generado con el JAR adjunto.</p>
-                                    <p><strong>Como Jefe Sprint 2:</strong> verificar que P4 y P6 entregaron sus partes. Tomar 2 capturas del kanban al cierre y de los Issues cerrados. Redactar la retrospectiva del Sprint 2 (2-3 párrafos). Total: 5 capturas + cd.yml + redacción de retrospectiva.</p>
+                                    <p><strong>Como CD:</strong> Creación del pipeline de despliegue continuo (cd.yml) para generar releases automáticos con el JAR y actualizar GitHub Pages.</p>
+                                    <p><strong>Como Jefe Sprint 2:</strong> Verificación de entregables de P4 y P6, análisis del Kanban y redacción de la retrospectiva del Sprint 2.</p>
                                 </div>
                             </div>
                         </div>
@@ -1366,7 +1366,7 @@
                                     Tareas Asignadas
                                 </h3>
                                 <div class="space-y-sm text-body-sm text-on-surface-variant leading-relaxed">
-                                    <p>Actualizar el HTML del sitio en el repositorio de la organización psmindustry. El sitio debe incorporar dos secciones nuevas: una para el Sprint 1 con el resumen de la investigación de Core, Rendering y Gameplay más el badge del CI en vivo, y una para el Sprint 2 con el resumen de Android, Guardado y Editor más el indicador del CD. También actualizar el cronograma con el progreso real. Coordinar con P5 para confirmar qué branch y qué directorio usa el workflow de CD al hacer el deploy, de forma que los archivos HTML modificados sean exactamente los que el workflow copia a gh-pages. Tomar 2 capturas: el sitio publicado en el navegador con las secciones nuevas visibles y la URL psmindustry.github.io confirmando el dominio, y opcionalmente el log del step de deploy en el workflow de CD mostrando los archivos copiados. Total: 2 capturas + actualización del HTML del sitio.</p>
+                                    <p>Actualización del HTML del sitio incorporando las secciones del Sprint 1 y 2 con sus respectivos resúmenes, badges y cronograma. Coordinación del flujo de despliegue en GitHub Pages.</p>
                                 </div>
                             </div>
                         </div>
@@ -1619,10 +1619,12 @@
                     }
                     
                     // Allow label override
-                    const lbls = issue.labels.map(l => l.name.toLowerCase());
-                    if (lbls.some(l => l.includes('sprint') || l.includes('scrum'))) status = 'sprint';
-                    if (lbls.some(l => l.includes('progress'))) status = 'inprogress';
-                    if (lbls.some(l => l.includes('review'))) status = 'review';
+                    if (status !== 'done') {
+                        const lbls = issue.labels.map(l => l.name.toLowerCase());
+                        if (lbls.some(l => l.includes('sprint') || l.includes('scrum'))) status = 'sprint';
+                        if (lbls.some(l => l.includes('progress'))) status = 'inprogress';
+                        if (lbls.some(l => l.includes('review'))) status = 'review';
+                    }
 
                     counts[status]++;
 
