@@ -1619,10 +1619,10 @@
                     }
                     
                     // Allow label override
-                    const hasSprintLabel = issue.labels.some(l => l.name.toLowerCase().includes('sprint') || l.name.toLowerCase().includes('scrum'));
-                    if (status === 'backlog' && hasSprintLabel) {
-                        status = 'sprint';
-                    }
+                    const lbls = issue.labels.map(l => l.name.toLowerCase());
+                    if (lbls.some(l => l.includes('sprint') || l.includes('scrum'))) status = 'sprint';
+                    if (lbls.some(l => l.includes('progress'))) status = 'inprogress';
+                    if (lbls.some(l => l.includes('review'))) status = 'review';
 
                     counts[status]++;
 
