@@ -1398,7 +1398,7 @@
     </main>
     <script>
         // --- Live CI/CD Monitor Script ---
-        const GITHUB_REPO = 'sandra-aliaga/Mindustry';
+        // const GITHUB_REPO = 'sandra-aliaga/Mindustry';
 
         // Al ser un repositorio público (sandra-aliaga/Mindustry), la API de GitHub Actions
         // permite consultar los workflows SIN necesidad de un PAT. 
@@ -1411,7 +1411,7 @@
 
             try {
                 // Obtenemos los últimos 5 workflows ejecutados
-                const response = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/actions/runs?per_page=5`, {
+                const response = await fetch(`https://api.github.com/repos/sandra-aliaga/Mindustry/actions/runs?per_page=5`, {
                     headers: {
                         'Accept': 'application/vnd.github.v3+json'
                     }
