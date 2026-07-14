@@ -1505,15 +1505,222 @@
                 </div>
             </section>
         </div>
-        <!-- Content for Hito 3 (Hidden) -->
+        <!-- Content for Hito 3 -->
         <div class="tab-content" id="hito3" role="tabpanel">
-            <div class="slide-container bg-surface-container-lowest">
-                <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop text-center py-xl">
-                    <span class="material-symbols-outlined text-6xl text-outline-variant mb-md">construction</span>
-                    <h2 class="font-headline-lg text-primary mb-sm">Entrega Final</h2>
-                    <p class="text-on-surface-variant">Contenido en preparación para el Hito 3.</p>
+            <!-- Hito 3 Header -->
+            <div class="bg-surface-container-lowest border-b border-outline-variant pt-xl pb-md sticky top-[136px] z-30">
+                <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <h2 class="font-headline-xl text-headline-xl text-primary">Hito 3 - Integración Final & DevOps</h2>
+                        <p class="text-on-surface-variant mt-sm font-body-md text-body-md">Resultados de la investigación arqueológica del Sprint 3 y la automatización de la calidad y despliegue final del Sprint 4.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://github.com/sandra-aliaga/Mindustry/releases/tag/v1.0.0" target="_blank"
+                            class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-xl hover:bg-primary-hover transition-colors text-sm font-bold shadow-sm">
+                            <span class="material-symbols-outlined text-[18px]">rocket_launch</span> Release v1.0.0
+                        </a>
+                        <a href="./coverage-report/index.html" target="_blank"
+                            class="flex items-center gap-2 px-4 py-2 bg-surface-container border border-outline-variant text-primary rounded-xl hover:bg-surface-variant transition-colors text-sm font-bold">
+                            <span class="material-symbols-outlined text-[18px]">analytics</span> Reporte Cobertura
+                        </a>
+                    </div>
                 </div>
             </div>
+
+            <!-- Sprint 3: Red, Mods y Ecosistema -->
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-lg">
+                <h3 class="font-headline-lg text-headline-lg text-primary border-b border-outline-variant pb-xs mb-lg flex items-center gap-2">
+                    <span class="material-symbols-outlined text-secondary">dns</span>
+                    Sprint 3: Red, Mods y Ecosistema (10 de junio – 30 de junio de 2026)
+                </h3>
+            </div>
+
+            <!-- Jack: Red y Servidor Headless -->
+            <section class="slide-container bg-surface-container-low/30 py-xl">
+                <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
+                    <div class="border-b border-outline-variant pb-xs flex items-center gap-sm">
+                        <div class="w-10 h-10 rounded-full bg-[#f7768e] text-white flex items-center justify-center font-bold shadow-md">
+                            P1
+                        </div>
+                        <div>
+                            <h2 class="font-headline-lg text-headline-lg text-primary">Red y Servidor Headless (Jack Llaique)</h2>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Investigación arqueológica de la arquitectura de red (US-08).</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+                        <div class="lg:col-span-4 flex flex-col gap-md">
+                            <div class="bg-white border border-outline-variant rounded-2xl p-lg shadow-sm">
+                                <h3 class="font-headline-md text-headline-md text-on-surface mb-sm flex items-center gap-xs">
+                                    <span class="material-symbols-outlined text-[#f7768e] text-[20px]">hub</span>
+                                    Análisis de Red
+                                </h3>
+                                <div class="space-y-sm text-body-sm text-on-surface-variant leading-relaxed">
+                                    <p>Investigación arqueológica del desacoplamiento de red en Mindustry: desde la abstracción de providers (ClientProvider y ServerProvider) en el primer commit relevante de Kryonet, hasta la migración integral al stack propio de ArcNet.</p>
+                                    <p>Análisis del submódulo headless <code>server</code> que permite levantar instancias del videojuego en la nube sin interfaz gráfica utilizando <code>HeadlessApplication</code>.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8 bg-white border border-outline-variant rounded-2xl p-lg shadow-sm">
+                            <h3 class="font-headline-md text-headline-md text-on-surface mb-md">Evidencia Visual (Red)</h3>
+                            <div class="grid grid-cols-2 gap-sm">
+                                <img alt="Historial de commits del stack de red" class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video" src="./imgs/fig01.png" />
+                                <img alt="Primeros commits de Kryonet en el repo" class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video" src="./imgs/fig03.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tania: Mods con Rhino -->
+            <section class="slide-container bg-surface-container-lowest py-xl">
+                <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
+                    <div class="border-b border-outline-variant pb-xs flex items-center gap-sm">
+                        <div class="w-10 h-10 rounded-full bg-[#ff9e64] text-white flex items-center justify-center font-bold shadow-md">
+                            P2
+                        </div>
+                        <div>
+                            <h2 class="font-headline-lg text-headline-lg text-primary">Soporte para Mods (Tania Ayque)</h2>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Investigación del runtime de scripting y extensibilidad (US-09).</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+                        <div class="lg:col-span-4 flex flex-col gap-md">
+                            <div class="bg-surface-container-low border border-outline-variant rounded-2xl p-lg shadow-sm">
+                                <h3 class="font-headline-md text-headline-md text-on-surface mb-sm flex items-center gap-xs">
+                                    <span class="material-symbols-outlined text-[#ff9e64] text-[20px]">extension</span>
+                                    Arquitectura de Extensibilidad
+                                </h3>
+                                <div class="space-y-sm text-body-sm text-on-surface-variant leading-relaxed">
+                                    <p>Análisis de las capas del sistema de mods: desde la carga por reflexión usando <code>URLClassLoader</code> y metadatos JSON, hasta la ejecución dinámica de scripts en JavaScript mediante la migración a un fork propio de Rhino JS (com.github.Anuken:rhino).</p>
+                                    <p>Esto permite a la comunidad modificar el comportamiento en runtime (incluyendo la IA de enemigos) sin necesidad de compilar código Java.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8 bg-surface-container-low border border-outline-variant rounded-2xl p-lg shadow-sm">
+                            <h3 class="font-headline-md text-headline-md text-on-surface mb-md">Evidencia Visual (Mods)</h3>
+                            <div class="grid grid-cols-2 gap-sm">
+                                <img alt="Historial de commits del sistema de mods" class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video" src="./imgs/fig07.png" />
+                                <img alt="Estructura de clases del paquete mod" class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video" src="./imgs/fig06.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Karla: Expansión del Ecosistema -->
+            <section class="slide-container bg-surface-container-low/30 py-xl">
+                <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
+                    <div class="border-b border-outline-variant pb-xs flex items-center gap-sm">
+                        <div class="w-10 h-10 rounded-full bg-[#7aa2f7] text-white flex items-center justify-center font-bold shadow-md">
+                            P5
+                        </div>
+                        <div>
+                            <h2 class="font-headline-lg text-headline-lg text-primary">Expansión del Ecosistema (Karla Bedregal)</h2>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Soporte multiplataforma e integraciones sociales (US-10).</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+                        <div class="lg:col-span-4 flex flex-col gap-md">
+                            <div class="bg-white border border-outline-variant rounded-2xl p-lg shadow-sm">
+                                <h3 class="font-headline-md text-headline-md text-on-surface mb-sm flex items-center gap-xs">
+                                    <span class="material-symbols-outlined text-[#7aa2f7] text-[20px]">groups</span>
+                                    Integración del Entorno
+                                </h3>
+                                <div class="space-y-sm text-body-sm text-on-surface-variant leading-relaxed">
+                                    <p>Análisis de las integraciones comerciales y sociales de Mindustry: uso de la API de Steamworks a través del wrapper <code>steamworks4j</code> para emparejamiento P2P y logros, integración de Discord Rich Presence para estado enriquecido, y el empaquetado nativo para iOS con el compilador RoboVM.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8 bg-white border border-outline-variant rounded-2xl p-lg shadow-sm">
+                            <h3 class="font-headline-md text-headline-md text-on-surface mb-md">Evidencia Visual (Ecosistema)</h3>
+                            <div class="grid grid-cols-2 gap-sm">
+                                <img alt="Primeros commits de la integración de Steam" class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video" src="./imgs/fig09.png" />
+                                <img alt="Estructura del módulo de iOS con RoboVM" class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video" src="./imgs/fig11.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sprint 4: Calidad, Release y Cierre -->
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-lg mt-xl">
+                <h3 class="font-headline-lg text-headline-lg text-primary border-b border-outline-variant pb-xs mb-lg flex items-center gap-2">
+                    <span class="material-symbols-outlined text-secondary">verified_user</span>
+                    Sprint 4: Calidad, Release Final y Cierre (1 de julio – 14 de julio de 2026)
+                </h3>
+            </div>
+
+            <!-- Rodrigo: Calidad de Código y Cobertura -->
+            <section class="slide-container bg-surface-container-low/30 py-xl">
+                <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
+                    <div class="border-b border-outline-variant pb-xs flex items-center gap-sm">
+                        <div class="w-10 h-10 rounded-full bg-[#bb9af7] text-white flex items-center justify-center font-bold shadow-md">
+                            P6
+                        </div>
+                        <div>
+                            <h2 class="font-headline-lg text-headline-lg text-primary">Calidad de Código & Cobertura (Rodrigo Layme)</h2>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Medición e integración de JaCoCo en el pipeline (DO-01).</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+                        <div class="lg:col-span-4 flex flex-col gap-md">
+                            <div class="bg-white border border-outline-variant rounded-2xl p-lg shadow-sm">
+                                <h3 class="font-headline-md text-headline-md text-on-surface mb-sm flex items-center gap-xs">
+                                    <span class="material-symbols-outlined text-[#bb9af7] text-[20px]">query_stats</span>
+                                    Métricas y Cobertura
+                                </h3>
+                                <div class="space-y-sm text-body-sm text-on-surface-variant leading-relaxed">
+                                    <p>Configuración del plugin oficial de JaCoCo en Gradle global. Se extendió el pipeline de CI (<code>ci.yml</code>) para que ejecute el análisis de cobertura mediante <code>jacocoTestReport</code> y rompa el build si la cobertura no alcanza el umbral mínimo fijado del 60%.</p>
+                                    <p>Los reportes de cobertura en formato interactivo HTML se despliegan automáticamente como artefactos y a través de esta web de Pages.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8 bg-white border border-outline-variant rounded-2xl p-lg shadow-sm">
+                            <h3 class="font-headline-md text-headline-md text-on-surface mb-md">Evidencia Visual (Calidad de Código)</h3>
+                            <div class="grid grid-cols-2 gap-sm">
+                                <img alt="Paso de JaCoCo en el script de CI" class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video" src="./imgs/fig25.png" />
+                                <img alt="Ejecución de build y tests en GitHub Actions" class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video" src="./imgs/fig26.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Karla & Sandra: CD Release v1.0.0 & Artículo IEEE -->
+            <section class="slide-container bg-surface-container-lowest py-xl">
+                <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-md">
+                    <div class="border-b border-outline-variant pb-xs flex items-center gap-sm">
+                        <div class="w-10 h-10 rounded-full bg-[#7aa2f7] text-white flex items-center justify-center font-bold shadow-md">
+                            CD
+                        </div>
+                        <div>
+                            <h2 class="font-headline-lg text-headline-lg text-primary">Release Semántico v1.0.0 & Artículo IEEE (Sandra & Karla)</h2>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Lanzamiento automatizado de ejecutables y documentación final (DC-03, DC-01).</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+                        <div class="lg:col-span-4 flex flex-col gap-md">
+                            <div class="bg-surface-container-low border border-outline-variant rounded-2xl p-lg shadow-sm">
+                                <h3 class="font-headline-md text-headline-md text-on-surface mb-sm flex items-center gap-xs">
+                                    <span class="material-symbols-outlined text-[#7aa2f7] text-[20px]">description</span>
+                                    Entregables de Cierre
+                                </h3>
+                                <div class="space-y-sm text-body-sm text-on-surface-variant leading-relaxed">
+                                    <p><strong>Release v1.0.0:</strong> Creación del workflow aislado <code>cd-final.yml</code> que se ejecuta únicamente con el tag <code>v1.0.0</code> en la rama master y consolida todos los entregables en un GitHub Release con ejecutables Desktop, Server, Dependencias y Cobertura.</p>
+                                    <p><strong>Artículo IEEE:</strong> Redacción del artículo académico formal del proyecto en formato IEEE que documenta detalladamente el análisis técnico, Kanban y las lecciones DevOps.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8 bg-surface-container-low border border-outline-variant rounded-2xl p-lg shadow-sm">
+                            <h3 class="font-headline-md text-headline-md text-on-surface mb-md">Evidencia Visual (Release Final)</h3>
+                            <div class="grid grid-cols-2 gap-sm">
+                                <img alt="GitHub Release v1.0.0 con artefactos listos" class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video" src="./imgs/fig21.png" />
+                                <img alt="Detalles de los assets del release publicado" class="lightbox-trigger w-full h-full object-cover bg-surface-container rounded-lg border border-outline-variant/50 aspect-video" src="./imgs/fig22.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
     <script>
